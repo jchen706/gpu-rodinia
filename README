@@ -1,6 +1,86 @@
 Rodinia Benchmark Suite 3.1
 ===========================
 
+
+Run: 
+
+btree: Yes (not support for multiple kernel in the same executable because of warp index) 
+
+
+backprop: No , 2D usage of threadIdx
+
+bfs:  should work
+
+cfd: Use of Template
+
+
+dwt2d: Use of Template
+
+
+gaussian: (should work) (has usage of threadIdx.y, blockDim.y, blockIdx.y)
+
+
+heartwall: (should work) (cudaMemcpyToSymbol, local Share memory) 
+
+hotspot: (should work) (usage of local shareMem, blockIdx, blockIdy, defines the constant of Block size)
+
+
+hotspot 3D: usage of 3d block dim
+
+
+huffman (cudaStream, cudaEvents, cudaMemcpyAsync)
+
+hybridsort: (texture)
+
+kmeans: (texture)
+
+lavaMD: should work
+
+leukocyte: (texture)
+
+lud: (should work. uses of threadIdx, maybe change to blockIdx)
+
+mummergpu: (texture)
+
+
+myocyte: (should work)
+
+nn: (blockidx.y)
+
+
+nw: (blockIdx.x, threadIdx.x)
+
+
+particlefilter(blockIdx, threadIdx, )
+
+pathfinder(sharedm)
+
+
+srad(blockIdx.x, threadIdx, NUMBER_THREADS)
+
+
+streamcluster (virtual, __device__ code, cudaEvents)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 0. Modifications
 
 Fork of https://github.com/yuhc/gpu-rodinia
