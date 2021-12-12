@@ -6,3 +6,4 @@ data/*
 *.swp
 *.gch
 *.out
+*.sh
