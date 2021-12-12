@@ -5,6 +5,8 @@ Rodinia Benchmark Suite 3.1
 
 Fork of https://github.com/yuhc/gpu-rodinia
 
+With Data Set
+
 Please download the dataset from the [original package][data].
 [data]: http://lava.cs.virginia.edu/Rodinia/download_links.htm
 
