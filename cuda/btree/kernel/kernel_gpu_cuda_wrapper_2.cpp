@@ -7,6 +7,7 @@
 //======================================================================================================================================================150
 
 #include "../common.h"									// (in the main program folder)	needed to recognized input parameters
+#include <cuda_runtime.h>
 
 //======================================================================================================================================================150
 //	UTILITIES
@@ -19,7 +20,8 @@
 //	KERNEL
 //======================================================================================================================================================150
 
-#include "./kernel_gpu_cuda_2.cu"						// (in the current directory)	GPU kernel, cannot include with header file because of complications with passing of constant memory variables
+// #include "./kernel_gpu_cuda_2.cu"						// (in the current directory)	GPU kernel, cannot include with header file because of complications with passing of constant memory variables
+#include "./kernel_gpu_cuda_2.h"
 
 //======================================================================================================================================================150
 //	HEADER
@@ -80,9 +82,9 @@ kernel_gpu_cuda_wrapper_2(	knode *knodes,
 	//====================================================================================================100
 
 	int numBlocks;
-	numBlocks = count;
+	numBlocks = 256;
 	int threadsPerBlock;
-	threadsPerBlock = order < 1024 ? order : 1024;
+	threadsPerBlock = 1;
 
 	printf("# of blocks = %d, # of threads/block = %d (ensure that device can handle)\n", numBlocks, threadsPerBlock);
 

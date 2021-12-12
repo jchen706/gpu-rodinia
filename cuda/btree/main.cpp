@@ -56,12 +56,14 @@
 //======================================================================================================================================================150
 //	LIBRARIES
 //======================================================================================================================================================150
-
+#include <cuda_runtime.h>
 #include <stdio.h>									// (in directory known to compiler)			needed by printf, stderr
 #include <limits.h>									// (in directory known to compiler)			needed by INT_MIN, INT_MAX
-// #include <sys/time.h>							// (in directory known to compiler)			needed by ???
+#include <sys/time.h>							// (in directory known to compiler)			needed by ???
 #include <math.h>									// (in directory known to compiler)			needed by log, pow
 #include <string.h>									// (in directory known to compiler)			needed by memset
+#include <time.h>
+#include <cstdio>
 
 //======================================================================================================================================================150
 //	COMMON
@@ -84,7 +86,7 @@
 //	KERNEL HEADERS
 //======================================================================================================================================================150
 
-#include "./kernel/kernel_gpu_cuda_wrapper.h"		// (in directory provided here)
+// #include "./kernel/kernel_gpu_cuda_wrapper.h"		// (in directory provided here)
 #include "./kernel/kernel_gpu_cuda_wrapper_2.h"		// (in directory provided here)
 
 //======================================================================================================================================================150
@@ -1878,8 +1880,9 @@ main(	int argc,
 	cores_arg = 1;
 	char *input_file = NULL;
 	char *command_file = NULL;
-	char *output="output.txt";
+	char const *output="output.txt";
 	FILE * pFile;
+	
 
 
 	// go through arguments
@@ -1953,9 +1956,10 @@ main(	int argc,
      //
 
 
-     pFile = fopen (output,"w+");
+     pFile = fopen("output.txt","w+");
+		 char str1[] = "Fail to open output.txt !\n";
      if (pFile==NULL) 
-       fputs ("Fail to open %s !\n",output);
+       printf("Fail to open output.txt !\n");
      fprintf(pFile,"******starting******\n");
      fclose(pFile);
 
@@ -2145,7 +2149,7 @@ main(	int argc,
 				// get # of queries from user
 				int count;
 				sscanf(commandPointer, "%d", &count);
-				while(*commandPointer!=32 && commandPointer!='\n')
+				while(*commandPointer!= ' ' && *commandPointer!='\n')
 				  commandPointer++;
 
 				printf("\n ******command: k count=%d \n",count);
@@ -2195,20 +2199,20 @@ main(	int argc,
 				}
 
 				// CUDA kernel
-				kernel_gpu_cuda_wrapper(records,
-										records_mem,
-										knodes,
-										knodes_elem,
-										knodes_mem,
+				// kernel_gpu_cuda_wrapper(records,
+				// 						records_mem,
+				// 						knodes,
+				// 						knodes_elem,
+				// 						knodes_mem,
 
-										order,
-										maxheight,
-										count,
+				// 						order,
+				// 						maxheight,
+				// 						count,
 
-										currKnode,
-										offset,
-										keys,
-										ans);
+				// 						currKnode,
+				// 						offset,
+				// 						keys,
+				// 						ans);
 
 				/* printf("ans: \n"); */
 				/* for(i = 0; i < count; i++){ */
@@ -2221,7 +2225,7 @@ main(	int argc,
 				pFile = fopen (output,"aw+");
 				if (pFile==NULL)
 				  {
-				    fputs ("Fail to open %s !\n",output);
+				    printf("Fail to open %s !\n",output);
 				  }
 				
 				fprintf(pFile,"\n ******command: k count=%d \n",count);
@@ -2275,12 +2279,12 @@ main(	int argc,
 				// get # of queries from user
 				int count;
 				sscanf(commandPointer, "%d", &count);
-				while(*commandPointer!=32 && commandPointer!='\n')
+				while(*commandPointer!=32 && *commandPointer!='\n')
 				  commandPointer++;
 
 				int rSize;
 				sscanf(commandPointer, "%d", &rSize);
-				while(*commandPointer!=32 && commandPointer!='\n')
+				while(*commandPointer!=32 && *commandPointer!='\n')
 				  commandPointer++;
 
 				printf("\n******command: j count=%d, rSize=%d \n",count, rSize);
@@ -2369,7 +2373,7 @@ main(	int argc,
 				pFile = fopen (output,"aw+");
 				if (pFile==NULL)
 				  {
-				    fputs ("Fail to open %s !\n",output);
+				 printf("Fail to open %s !\n",output);
 				  }
 
 				fprintf(pFile,"\n******command: j count=%d, rSize=%d \n",count, rSize);				

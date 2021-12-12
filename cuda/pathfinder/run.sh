@@ -14,7 +14,7 @@ llc --relocation-model=pic --filetype=obj newKernel.bc
 llvm-dis newKernel.bc
 
 # link the shared library
-g++ -Wall -L/data/bgarg6/cuda-on-everywhere/runtimes/pool/development/api/cudart/build -o demo -fPIC -no-pie newKernel.o newMain.o -lc -lcudart -Wl,-no-as-needed -Wl,-z,notext -rdynamic# ./demo
+g++ -Wall -L/data/jchen/cuda-on-everywhere/runtimes/pool/development/api/cudart/build -o demo -fPIC -no-pie newKernel.o newMain.o -lc -lcudart -Wl,-no-as-needed -Wl,-z,notext -rdynamic# ./demo
 
 # 
 # clang++ pathfinder.cu -o pathfinder --cuda-path=/usr/local/cuda-10.1 --cuda-gpu-arch=sm_35 -L/usr/local/cuda-10.1/lib64 -lcudart_static -ldl -lrt -pthread -save-temps -v

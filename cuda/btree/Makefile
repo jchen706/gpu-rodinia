@@ -1,6 +1,7 @@
-include ../../common/make.config
-
-CUDA_LIB =	-lcuda -lcudart
+# include ../../common/make.config
+CUDA_DIR = 
+CUDA_LIB_DIR = /data/jchen/cuda-on-everywhere/runtimes/pool/development/api/cudart/build
+CUDA_LIB = -lcudart
 CUDA_FLAG = -arch sm_35
 
 # ====================================================================================================100
@@ -85,22 +86,22 @@ CUD_C = /usr/local/cuda/bin/nvcc
 #	EXECUTABLES (LINK OBJECTS TOGETHER INTO BINARY)
 # ========================================================================================================================================================================================================200
 
-b+tree.out:	./main.o \
-		./kernel/kernel_gpu_cuda_wrapper.o \
-		./kernel/kernel_gpu_cuda_wrapper_2.o \
-		./util/timer/timer.o \
-		./util/num/num.o \
-		./util/cuda/cuda.o
-	$(C_C)	./main.o \
-			./kernel/kernel_gpu_cuda_wrapper.o \
-			./kernel/kernel_gpu_cuda_wrapper_2.o \
-			./util/timer/timer.o \
-			./util/num/num.o \
-			./util/cuda/cuda.o \
-			-lm \
-			-L$(CUDA_LIB_DIR) \
-			$(CUDA_LIB)\
-                       -o b+tree.out
+# b+tree.out:	./main.o \
+# 		./kernel/kernel_gpu_cuda_wrapper.o \
+# 		./kernel/kernel_gpu_cuda_wrapper_2.o \
+# 		./util/timer/timer.o \
+# 		./util/num/num.o \
+# 		./util/cuda/cuda.o
+# 	g++ -fPIC -no-pie	./main.o \
+# 			./kernel/kernel_gpu_cuda_wrapper.o \
+# 			./kernel/kernel_gpu_cuda_wrapper_2.o \
+# 			./util/timer/timer.o \
+# 			./util/num/num.o \
+# 			./util/cuda/cuda.o \
+# 			-lm \
+# 			-L$(CUDA_LIB_DIR) \
+# 			$(CUDA_LIB)\
+#                        -o b+tree.out
 
 
 # ========================================================================================================================================================================================================200
@@ -111,68 +112,82 @@ b+tree.out:	./main.o \
 #	MAIN FUNCTION
 # ======================================================================================================================================================150
 
-main.o:	./common.h \
-		./main.h \
-		./main.c
-	$(C_C)	$(KERNEL_DIM) ./main.c \
-			-c \
-			-o ./main.o \
-			-O3
+# main.o:	./common.h \
+# 		./main.h \
+# 		./main.c
+# 	clang++	$(KERNEL_DIM) ./main.c \
+# 			-c \
+# 			-o ./main.o \
+# 			-O3
 
 # ======================================================================================================================================================150
 #	KERNELS
 # ======================================================================================================================================================150
 
-./kernel/kernel_gpu_cuda_wrapper.o:	./common.h \
-									./kernel/kernel_gpu_cuda_wrapper.h \
-									./kernel/kernel_gpu_cuda_wrapper.cu
-	$(CUD_C) $(KERNEL_DIM) ./kernel/kernel_gpu_cuda_wrapper.cu \
-				-c \
-				-o ./kernel/kernel_gpu_cuda_wrapper.o \
-				-O3 \
-				$(CUDA_FLAG)
+# ./kernel/kernel_gpu_cuda_wrapper.o:	./common.h \
+# 									./kernel/kernel_gpu_cuda_wrapper.h \
+# 									./kernel/kernel_gpu_cuda_wrapper.cu
+# 	$(CUD_C) $(KERNEL_DIM) ./kernel/kernel_gpu_cuda_wrapper.cu \
+# 				-c \
+# 				-o ./kernel/kernel_gpu_cuda_wrapper.o \
+# 				-O3 \
+# 				$(CUDA_FLAG)
 
-./kernel/kernel_gpu_cuda_wrapper_2.o:	./common.h \
-										./kernel/kernel_gpu_cuda_wrapper_2.h \
-										./kernel/kernel_gpu_cuda_wrapper_2.cu
-	$(CUD_C) $(KERNEL_DIM) ./kernel/kernel_gpu_cuda_wrapper_2.cu \
-				-c \
-				-o ./kernel/kernel_gpu_cuda_wrapper_2.o \
-				-O3 \
-				$(CUDA_FLAG)
+# ./kernel/kernel_gpu_cuda_wrapper_2.o:	./common.h \
+# 										./kernel/kernel_gpu_cuda_wrapper_2.h \
+# 										./kernel/kernel_gpu_cuda_wrapper_2.cu
+# 	$(CUD_C) $(KERNEL_DIM) ./kernel/kernel_gpu_cuda_wrapper_2.cu \
+# 				-c \
+# 				-o ./kernel/kernel_gpu_cuda_wrapper_2.o \
+# 				-O3 \
+# 				$(CUDA_FLAG)
 
 # ======================================================================================================================================================150
 #	UTILITIES
 # ======================================================================================================================================================150
 
-./util/timer/timer.o:	./common.h \
-						./util/timer/timer.h \
-						./util/timer/timer.c
-	$(C_C)	./util/timer/timer.c \
-			-c \
-			-o ./util/timer/timer.o \
-			-O3
+# ./util/timer/timer.o:	./common.h \
+# 						./util/timer/timer.h \
+# 						./util/timer/timer.c
+# 	$(C_C)	./util/timer/timer.c \
+# 			-c \
+# 			-o ./util/timer/timer.o \
+# 			-O3
 
-./util/num/num.o:	./common.h \
-					./util/num/num.h \
-					./util/num/num.c
-	$(C_C)	./util/num/num.c \
-			-c \
-			-o ./util/num/num.o \
-			-O3
+# ./util/num/num.o:	./common.h \
+# 					./util/num/num.h \
+# 					./util/num/num.c
+# 	$(C_C)	./util/num/num.c \
+# 			-c \
+# 			-o ./util/num/num.o \
+# 			-O3
 
-./util/cuda/cuda.o:	./common.h \
-					./util/cuda/cuda.h \
-					./util/cuda/cuda.cu
-	$(CUD_C)	./util/cuda/cuda.cu \
-				-c \
-				-o ./util/cuda/cuda.o \
-				-O3 \
-				$(CUDA_FLAG)
+# ./util/cuda/cuda.o:	./common.h \
+# 					./util/cuda/cuda.h \
+# 					./util/cuda/cuda.cu
+# 	$(CUD_C)	./util/cuda/cuda.cu \
+# 				-c \
+# 				-o ./util/cuda/cuda.o \
+# 				-O3 \
+# 				$(CUDA_FLAG)
 
 # ======================================================================================================================================================150
 #	END
 # ======================================================================================================================================================150
+
+
+./kernel/kernel_gpu_cuda_wrapper.o:	./common.h \
+									./kernel/kernel_gpu_cuda_wrapper.h \
+									./kernel/kernel_gpu_cuda_wrapper.cu \
+				clang++ $(KERNEL_DIM) ./kernel/kernel_gpu_cuda_wrapper.cu \
+				-c \
+				-o ./kernel/kernel_gpu_cuda_wrapper.o \
+				-O3 \
+				$(CUDA_FLAG)
+
+
+
+
 
 # ========================================================================================================================================================================================================200
 #	DELETE
