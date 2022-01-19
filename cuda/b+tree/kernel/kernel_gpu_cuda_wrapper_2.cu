@@ -269,20 +269,20 @@ kernel_gpu_cuda_wrapper_2(	knode *knodes,
 												&ansDLength};
 	dim3 grid(numBlocks);
 	dim3 block(threadsPerBlock);
-	cudaLaunchKernel((void*)&findRangeK, grid, block, args, 0, NULL);
+	// cudaLaunchKernel((void*)&findRangeK, grid, block, args, 0, NULL);
 
-	// findRangeK<<<numBlocks, threadsPerBlock>>>(	maxheight,
-	// 											knodesD,
-	// 											knodes_elem,
+	findRangeK<<<numBlocks, threadsPerBlock>>>(	maxheight,
+												knodesD,
+												knodes_elem,
 
-	// 											currKnodeD,
-	// 											offsetD,
-	// 											lastKnodeD,
-	// 											offset_2D,
-	// 											startD,
-	// 											endD,
-	// 											ansDStart,
-	// 											ansDLength);
+												currKnodeD,
+												offsetD,
+												lastKnodeD,
+												offset_2D,
+												startD,
+												endD,
+												ansDStart,
+												ansDLength);
 
 	cudaDeviceSynchronize();
 	checkCUDAError("findRangeK");

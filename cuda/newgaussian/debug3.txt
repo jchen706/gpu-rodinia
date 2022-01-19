@@ -1,0 +1,828 @@
+Script started on 2022-01-08 20:47:52-0500
+jchen706@boson:/data/jchen/rodi/rodinia/cuda/gaussian/newg/gaussian/testtry$ ./run.sh 
+#### INIT BLOCK ####
+#### handle warp vote ####
+#### handle warp shfl ####
+#### insert sync ####
+do not need to handle tri-income if: if.end58
+#### split block by sync ####
+#### insert warp loop ####
+need not nested
+ New Func:  _Z4Fan1PfS_ii
+[WARNING] match single conditional branch with HARD CODE
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+m_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+a_cuda.addr_intra_warp_ entry _Z4Fan1PfS_ii
+Size.addr_intra_warp_ entry _Z4Fan1PfS_ii
+t.addr_intra_warp_ entry _Z4Fan1PfS_ii
+ New Func:  _Z4Fan2PfS_S_iii
+[WARNING] match single conditional branch with HARD CODE
+[WARNING] match single conditional branch with HARD CODE
+[WARNING] match single conditional branch with HARD CODE
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+m_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+a_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+b_cuda.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+Size.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+j1.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+t.addr_intra_warp_ entry _Z4Fan2PfS_S_iii
+xidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+yidx_intra_warp_ entry _Z4Fan2PfS_S_iii
+ print instruction 
+_Z4Fan1PfS_ii
+
+entry:
+  %0 = load i32, i32* @block_size
+  %t.addr_intra_warp_ = alloca i32, i32 %0
+  %1 = load i32, i32* @block_size
+  %Size.addr_intra_warp_ = alloca i32, i32 %1
+  %2 = load i32, i32* @block_size
+  %a_cuda.addr_intra_warp_ = alloca float*, i32 %2
+  %3 = load i32, i32* @block_size
+  %m_cuda.addr_intra_warp_ = alloca float*, i32 %3
+  %m_cuda.addr = alloca float*, align 8
+  br label %entry_after_block_sync_0
+
+entry_after_block_sync_0:                         ; preds = %entry
+  %a_cuda.addr = alloca float*, align 8
+  %Size.addr = alloca i32, align 4
+  %t.addr = alloca i32, align 4
+  br label %entry_after_block_sync_0_after_block_sync_3
+
+entry_after_block_sync_0_after_block_sync_3:      ; preds = %entry_after_block_sync_0
+  br label %intra_warp_init
+
+intra_warp_init:                                  ; preds = %entry_after_block_sync_0_after_block_sync_3
+  store i32 0, i32* @intra_warp_index
+  br label %intra_warp_cond
+
+intra_warp_inc:                                   ; preds = %return
+  %4 = load i32, i32* @intra_warp_index
+  %intra_warp_index_increment = add i32 %4, 1
+  store i32 %intra_warp_index_increment, i32* @intra_warp_index
+  br label %intra_warp_cond
+
+intra_warp_cond:                                  ; preds = %intra_warp_inc, %intra_warp_init
+  %5 = load i32, i32* @block_size
+  %6 = load i32, i32* @intra_warp_index
+  %7 = icmp ult i32 %6, %5
+  br i1 %7, label %entry_after_block_sync_0_after_block_sync_1, label %reset_block, !llvm.loop !11
+
+entry_after_block_sync_0_after_block_sync_1:      ; preds = %intra_warp_cond
+  %8 = load i32, i32* @inter_warp_index
+  %9 = load i32, i32* @intra_warp_index
+  %10 = mul i32 %8, 32
+  %thread_idx1 = add i32 %9, %10
+  %11 = getelementptr float*, float** %m_cuda.addr_intra_warp_, i32 %thread_idx1
+  store float* %m_cuda, float** %11, align 8, !llvm.mem.parallel_loop_access !14
+  %12 = load i32, i32* @inter_warp_index
+  %13 = load i32, i32* @intra_warp_index
+  %14 = mul i32 %12, 32
+  %thread_idx4 = add i32 %13, %14
+  %15 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx4
+  store float* %a_cuda, float** %15, align 8, !llvm.mem.parallel_loop_access !14
+  %16 = load i32, i32* @inter_warp_index
+  %17 = load i32, i32* @intra_warp_index
+  %18 = mul i32 %16, 32
+  %thread_idx9 = add i32 %17, %18
+  %19 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx9
+  store i32 %Size, i32* %19, align 4, !llvm.mem.parallel_loop_access !14
+  %20 = load i32, i32* @inter_warp_index
+  %21 = load i32, i32* @intra_warp_index
+  %22 = mul i32 %20, 32
+  %thread_idx17 = add i32 %21, %22
+  %23 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx17
+  store i32 %t, i32* %23, align 4, !llvm.mem.parallel_loop_access !14
+  %call = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call1 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call2 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul = mul i32 %call1, %call2
+  %add = add i32 %call, %mul
+  %24 = load i32, i32* @inter_warp_index
+  %25 = load i32, i32* @intra_warp_index
+  %26 = mul i32 %24, 32
+  %thread_idx8 = add i32 %25, %26
+  %27 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx8
+  %28 = load i32, i32* %27, align 4, !llvm.mem.parallel_loop_access !14
+  %sub = sub nsw i32 %28, 1
+  %29 = load i32, i32* @inter_warp_index
+  %30 = load i32, i32* @intra_warp_index
+  %31 = mul i32 %29, 32
+  %thread_idx16 = add i32 %30, %31
+  %32 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx16
+  %33 = load i32, i32* %32, align 4, !llvm.mem.parallel_loop_access !14
+  %sub3 = sub nsw i32 %sub, %33
+  %cmp = icmp uge i32 %add, %sub3
+  br i1 %cmp, label %if.then, label %if.end
+
+if.then:                                          ; preds = %entry_after_block_sync_0_after_block_sync_1
+  br label %return
+
+if.end:                                           ; preds = %entry_after_block_sync_0_after_block_sync_1
+  %34 = load i32, i32* @inter_warp_index
+  %35 = load i32, i32* @intra_warp_index
+  %36 = mul i32 %34, 32
+  %thread_idx3 = add i32 %35, %36
+  %37 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx3
+  %38 = load float*, float** %37, align 8, !llvm.mem.parallel_loop_access !14
+  %39 = load i32, i32* @inter_warp_index
+  %40 = load i32, i32* @intra_warp_index
+  %41 = mul i32 %39, 32
+  %thread_idx7 = add i32 %40, %41
+  %42 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx7
+  %43 = load i32, i32* %42, align 4, !llvm.mem.parallel_loop_access !14
+  %call4 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call5 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul6 = mul i32 %call4, %call5
+  %call7 = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %add8 = add i32 %mul6, %call7
+  %44 = load i32, i32* @inter_warp_index
+  %45 = load i32, i32* @intra_warp_index
+  %46 = mul i32 %44, 32
+  %thread_idx15 = add i32 %45, %46
+  %47 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx15
+  %48 = load i32, i32* %47, align 4, !llvm.mem.parallel_loop_access !14
+  %add9 = add i32 %add8, %48
+  %add10 = add i32 %add9, 1
+  %mul11 = mul i32 %43, %add10
+  %idx.ext = zext i32 %mul11 to i64
+  %add.ptr = getelementptr inbounds float, float* %38, i64 %idx.ext
+  %49 = load i32, i32* @inter_warp_index
+  %50 = load i32, i32* @intra_warp_index
+  %51 = mul i32 %49, 32
+  %thread_idx14 = add i32 %50, %51
+  %52 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx14
+  %53 = load i32, i32* %52, align 4, !llvm.mem.parallel_loop_access !14
+  %idx.ext12 = sext i32 %53 to i64
+  %add.ptr13 = getelementptr inbounds float, float* %add.ptr, i64 %idx.ext12
+  %54 = load float, float* %add.ptr13, align 4, !llvm.mem.parallel_loop_access !14
+  %55 = load i32, i32* @inter_warp_index
+  %56 = load i32, i32* @intra_warp_index
+  %57 = mul i32 %55, 32
+  %thread_idx2 = add i32 %56, %57
+  %58 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx2
+  %59 = load float*, float** %58, align 8, !llvm.mem.parallel_loop_access !14
+  %60 = load i32, i32* @inter_warp_index
+  %61 = load i32, i32* @intra_warp_index
+  %62 = mul i32 %60, 32
+  %thread_idx6 = add i32 %61, %62
+  %63 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx6
+  %64 = load i32, i32* %63, align 4, !llvm.mem.parallel_loop_access !14
+  %65 = load i32, i32* @inter_warp_index
+  %66 = load i32, i32* @intra_warp_index
+  %67 = mul i32 %65, 32
+  %thread_idx13 = add i32 %66, %67
+  %68 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx13
+  %69 = load i32, i32* %68, align 4, !llvm.mem.parallel_loop_access !14
+  %mul14 = mul nsw i32 %64, %69
+  %idx.ext15 = sext i32 %mul14 to i64
+  %add.ptr16 = getelementptr inbounds float, float* %59, i64 %idx.ext15
+  %70 = load i32, i32* @inter_warp_index
+  %71 = load i32, i32* @intra_warp_index
+  %72 = mul i32 %70, 32
+  %thread_idx12 = add i32 %71, %72
+  %73 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx12
+  %74 = load i32, i32* %73, align 4, !llvm.mem.parallel_loop_access !14
+  %idx.ext17 = sext i32 %74 to i64
+  %add.ptr18 = getelementptr inbounds float, float* %add.ptr16, i64 %idx.ext17
+  %75 = load float, float* %add.ptr18, align 4, !llvm.mem.parallel_loop_access !14
+  %div = fdiv float %54, %75
+  %76 = load i32, i32* @inter_warp_index
+  %77 = load i32, i32* @intra_warp_index
+  %78 = mul i32 %76, 32
+  %thread_idx = add i32 %77, %78
+  %79 = getelementptr float*, float** %m_cuda.addr_intra_warp_, i32 %thread_idx
+  %80 = load float*, float** %79, align 8, !llvm.mem.parallel_loop_access !14
+  %81 = load i32, i32* @inter_warp_index
+  %82 = load i32, i32* @intra_warp_index
+  %83 = mul i32 %81, 32
+  %thread_idx5 = add i32 %82, %83
+  %84 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx5
+  %85 = load i32, i32* %84, align 4, !llvm.mem.parallel_loop_access !14
+  %call19 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call20 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul21 = mul i32 %call19, %call20
+  %call22 = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %add23 = add i32 %mul21, %call22
+  %86 = load i32, i32* @inter_warp_index
+  %87 = load i32, i32* @intra_warp_index
+  %88 = mul i32 %86, 32
+  %thread_idx11 = add i32 %87, %88
+  %89 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx11
+  %90 = load i32, i32* %89, align 4, !llvm.mem.parallel_loop_access !14
+  %add24 = add i32 %add23, %90
+  %add25 = add i32 %add24, 1
+  %mul26 = mul i32 %85, %add25
+  %idx.ext27 = zext i32 %mul26 to i64
+  %add.ptr28 = getelementptr inbounds float, float* %80, i64 %idx.ext27
+  %91 = load i32, i32* @inter_warp_index
+  %92 = load i32, i32* @intra_warp_index
+  %93 = mul i32 %91, 32
+  %thread_idx10 = add i32 %92, %93
+  %94 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx10
+  %95 = load i32, i32* %94, align 4, !llvm.mem.parallel_loop_access !14
+  %idx.ext29 = sext i32 %95 to i64
+  %add.ptr30 = getelementptr inbounds float, float* %add.ptr28, i64 %idx.ext29
+  store float %div, float* %add.ptr30, align 4, !llvm.mem.parallel_loop_access !14
+  br label %return
+
+return:                                           ; preds = %if.end, %if.then
+  br label %intra_warp_inc
+
+reset_block:                                      ; preds = %intra_warp_cond
+  store i32 0, i32* @intra_warp_index
+  br label %return_after_block_sync_4
+
+return_after_block_sync_4:                        ; preds = %reset_block
+  br label %return_after_block_sync_2
+
+return_after_block_sync_2:                        ; preds = %return_after_block_sync_4
+  ret void
+_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.tid.x()
+  ret i32 %0
+_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.ctaid.x()
+  ret i32 %0
+_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.ntid.x()
+  ret i32 %0
+_Z4Fan2PfS_S_iii
+
+entry:
+  %0 = load i32, i32* @block_size
+  %yidx_intra_warp_ = alloca i32, i32 %0
+  %1 = load i32, i32* @block_size
+  %xidx_intra_warp_ = alloca i32, i32 %1
+  %2 = load i32, i32* @block_size
+  %t.addr_intra_warp_ = alloca i32, i32 %2
+  %3 = load i32, i32* @block_size
+  %j1.addr_intra_warp_ = alloca i32, i32 %3
+  %4 = load i32, i32* @block_size
+  %Size.addr_intra_warp_ = alloca i32, i32 %4
+  %5 = load i32, i32* @block_size
+  %b_cuda.addr_intra_warp_ = alloca float*, i32 %5
+  %6 = load i32, i32* @block_size
+  %a_cuda.addr_intra_warp_ = alloca float*, i32 %6
+  %7 = load i32, i32* @block_size
+  %m_cuda.addr_intra_warp_ = alloca float*, i32 %7
+  %m_cuda.addr = alloca float*, align 8
+  br label %entry_after_block_sync_3
+
+entry_after_block_sync_3:                         ; preds = %entry
+  %a_cuda.addr = alloca float*, align 8
+  %b_cuda.addr = alloca float*, align 8
+  %Size.addr = alloca i32, align 4
+  %j1.addr = alloca i32, align 4
+  %t.addr = alloca i32, align 4
+  %xidx = alloca i32, align 4
+  %yidx = alloca i32, align 4
+  br label %entry_after_block_sync_1
+
+entry_after_block_sync_1:                         ; preds = %entry_after_block_sync_3
+  br label %intra_warp_init
+
+intra_warp_init:                                  ; preds = %entry_after_block_sync_1
+  store i32 0, i32* @intra_warp_index
+  br label %intra_warp_cond
+
+intra_warp_inc:                                   ; preds = %if.end58
+  %8 = load i32, i32* @intra_warp_index
+  %intra_warp_index_increment = add i32 %8, 1
+  store i32 %intra_warp_index_increment, i32* @intra_warp_index
+  br label %intra_warp_cond
+
+intra_warp_cond:                                  ; preds = %intra_warp_inc, %intra_warp_init
+  %9 = load i32, i32* @block_size
+  %10 = load i32, i32* @intra_warp_index
+  %11 = icmp ult i32 %10, %9
+  br i1 %11, label %entry_after_block_sync_1_after_block_sync_4, label %reset_block, !llvm.loop !11
+
+entry_after_block_sync_1_after_block_sync_4:      ; preds = %intra_warp_cond
+  %12 = load i32, i32* @inter_warp_index
+  %13 = load i32, i32* @intra_warp_index
+  %14 = mul i32 %12, 32
+  %thread_idx2 = add i32 %13, %14
+  %15 = getelementptr float*, float** %m_cuda.addr_intra_warp_, i32 %thread_idx2
+  store float* %m_cuda, float** %15, align 8, !llvm.mem.parallel_loop_access !14
+  %16 = load i32, i32* @inter_warp_index
+  %17 = load i32, i32* @intra_warp_index
+  %18 = mul i32 %16, 32
+  %thread_idx5 = add i32 %17, %18
+  %19 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx5
+  store float* %a_cuda, float** %19, align 8, !llvm.mem.parallel_loop_access !14
+  %20 = load i32, i32* @inter_warp_index
+  %21 = load i32, i32* @intra_warp_index
+  %22 = mul i32 %20, 32
+  %thread_idx8 = add i32 %21, %22
+  %23 = getelementptr float*, float** %b_cuda.addr_intra_warp_, i32 %thread_idx8
+  store float* %b_cuda, float** %23, align 8, !llvm.mem.parallel_loop_access !14
+  %24 = load i32, i32* @inter_warp_index
+  %25 = load i32, i32* @intra_warp_index
+  %26 = mul i32 %24, 32
+  %thread_idx15 = add i32 %25, %26
+  %27 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx15
+  store i32 %Size, i32* %27, align 4, !llvm.mem.parallel_loop_access !14
+  %28 = load i32, i32* @inter_warp_index
+  %29 = load i32, i32* @intra_warp_index
+  %30 = mul i32 %28, 32
+  %thread_idx16 = add i32 %29, %30
+  %31 = getelementptr i32, i32* %j1.addr_intra_warp_, i32 %thread_idx16
+  store i32 %j1, i32* %31, align 4, !llvm.mem.parallel_loop_access !14
+  %32 = load i32, i32* @inter_warp_index
+  %33 = load i32, i32* @intra_warp_index
+  %34 = mul i32 %32, 32
+  %thread_idx29 = add i32 %33, %34
+  %35 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx29
+  store i32 %t, i32* %35, align 4, !llvm.mem.parallel_loop_access !14
+  %call = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call1 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call2 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul = mul i32 %call1, %call2
+  %add = add i32 %call, %mul
+  %36 = load i32, i32* @inter_warp_index
+  %37 = load i32, i32* @intra_warp_index
+  %38 = mul i32 %36, 32
+  %thread_idx14 = add i32 %37, %38
+  %39 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx14
+  %40 = load i32, i32* %39, align 4, !llvm.mem.parallel_loop_access !14
+  %sub = sub nsw i32 %40, 1
+  %41 = load i32, i32* @inter_warp_index
+  %42 = load i32, i32* @intra_warp_index
+  %43 = mul i32 %41, 32
+  %thread_idx28 = add i32 %42, %43
+  %44 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx28
+  %45 = load i32, i32* %44, align 4, !llvm.mem.parallel_loop_access !14
+  %sub3 = sub nsw i32 %sub, %45
+  %cmp = icmp uge i32 %add, %sub3
+  br i1 %cmp, label %if.then, label %if.end
+
+if.then:                                          ; preds = %entry_after_block_sync_1_after_block_sync_4
+  br label %if.end58
+
+if.end:                                           ; preds = %entry_after_block_sync_1_after_block_sync_4
+  %call4 = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %call5 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %call6 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul7 = mul i32 %call5, %call6
+  %add8 = add i32 %call4, %mul7
+  %46 = load i32, i32* @inter_warp_index
+  %47 = load i32, i32* @intra_warp_index
+  %48 = mul i32 %46, 32
+  %thread_idx13 = add i32 %47, %48
+  %49 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx13
+  %50 = load i32, i32* %49, align 4, !llvm.mem.parallel_loop_access !14
+  %51 = load i32, i32* @inter_warp_index
+  %52 = load i32, i32* @intra_warp_index
+  %53 = mul i32 %51, 32
+  %thread_idx27 = add i32 %52, %53
+  %54 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx27
+  %55 = load i32, i32* %54, align 4, !llvm.mem.parallel_loop_access !14
+  %sub9 = sub nsw i32 %50, %55
+  %cmp10 = icmp uge i32 %add8, %sub9
+  br i1 %cmp10, label %if.then11, label %if.end12
+
+if.then11:                                        ; preds = %if.end
+  br label %if.end58
+
+if.end12:                                         ; preds = %if.end
+  %call13 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %call14 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul15 = mul i32 %call13, %call14
+  %call16 = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv() #3, !llvm.mem.parallel_loop_access !14
+  %add17 = add i32 %mul15, %call16
+  %56 = load i32, i32* @inter_warp_index
+  %57 = load i32, i32* @intra_warp_index
+  %58 = mul i32 %56, 32
+  %thread_idx34 = add i32 %57, %58
+  %59 = getelementptr i32, i32* %xidx_intra_warp_, i32 %thread_idx34
+  store i32 %add17, i32* %59, align 4, !llvm.mem.parallel_loop_access !14
+  %call18 = call i32 @_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %call19 = call i32 @_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %mul20 = mul i32 %call18, %call19
+  %call21 = call i32 @_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv() #3, !llvm.mem.parallel_loop_access !14
+  %add22 = add i32 %mul20, %call21
+  %60 = load i32, i32* @inter_warp_index
+  %61 = load i32, i32* @intra_warp_index
+  %62 = mul i32 %60, 32
+  %thread_idx39 = add i32 %61, %62
+  %63 = getelementptr i32, i32* %yidx_intra_warp_, i32 %thread_idx39
+  store i32 %add22, i32* %63, align 4, !llvm.mem.parallel_loop_access !14
+  %64 = load i32, i32* @inter_warp_index
+  %65 = load i32, i32* @intra_warp_index
+  %66 = mul i32 %64, 32
+  %thread_idx1 = add i32 %65, %66
+  %67 = getelementptr float*, float** %m_cuda.addr_intra_warp_, i32 %thread_idx1
+  %68 = load float*, float** %67, align 8, !llvm.mem.parallel_loop_access !14
+  %69 = load i32, i32* @inter_warp_index
+  %70 = load i32, i32* @intra_warp_index
+  %71 = mul i32 %69, 32
+  %thread_idx12 = add i32 %70, %71
+  %72 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx12
+  %73 = load i32, i32* %72, align 4, !llvm.mem.parallel_loop_access !14
+  %74 = load i32, i32* @inter_warp_index
+  %75 = load i32, i32* @intra_warp_index
+  %76 = mul i32 %74, 32
+  %thread_idx33 = add i32 %75, %76
+  %77 = getelementptr i32, i32* %xidx_intra_warp_, i32 %thread_idx33
+  %78 = load i32, i32* %77, align 4, !llvm.mem.parallel_loop_access !14
+  %add23 = add nsw i32 %78, 1
+  %79 = load i32, i32* @inter_warp_index
+  %80 = load i32, i32* @intra_warp_index
+  %81 = mul i32 %79, 32
+  %thread_idx26 = add i32 %80, %81
+  %82 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx26
+  %83 = load i32, i32* %82, align 4, !llvm.mem.parallel_loop_access !14
+  %add24 = add nsw i32 %add23, %83
+  %mul25 = mul nsw i32 %73, %add24
+  %84 = load i32, i32* @inter_warp_index
+  %85 = load i32, i32* @intra_warp_index
+  %86 = mul i32 %84, 32
+  %thread_idx25 = add i32 %85, %86
+  %87 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx25
+  %88 = load i32, i32* %87, align 4, !llvm.mem.parallel_loop_access !14
+  %add26 = add nsw i32 %mul25, %88
+  %idxprom = sext i32 %add26 to i64
+  %arrayidx = getelementptr inbounds float, float* %68, i64 %idxprom
+  %89 = load float, float* %arrayidx, align 4, !llvm.mem.parallel_loop_access !14
+  %90 = load i32, i32* @inter_warp_index
+  %91 = load i32, i32* @intra_warp_index
+  %92 = mul i32 %90, 32
+  %thread_idx4 = add i32 %91, %92
+  %93 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx4
+  %94 = load float*, float** %93, align 8, !llvm.mem.parallel_loop_access !14
+  %95 = load i32, i32* @inter_warp_index
+  %96 = load i32, i32* @intra_warp_index
+  %97 = mul i32 %95, 32
+  %thread_idx11 = add i32 %96, %97
+  %98 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx11
+  %99 = load i32, i32* %98, align 4, !llvm.mem.parallel_loop_access !14
+  %100 = load i32, i32* @inter_warp_index
+  %101 = load i32, i32* @intra_warp_index
+  %102 = mul i32 %100, 32
+  %thread_idx24 = add i32 %101, %102
+  %103 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx24
+  %104 = load i32, i32* %103, align 4, !llvm.mem.parallel_loop_access !14
+  %mul27 = mul nsw i32 %99, %104
+  %105 = load i32, i32* @inter_warp_index
+  %106 = load i32, i32* @intra_warp_index
+  %107 = mul i32 %105, 32
+  %thread_idx38 = add i32 %106, %107
+  %108 = getelementptr i32, i32* %yidx_intra_warp_, i32 %thread_idx38
+  %109 = load i32, i32* %108, align 4, !llvm.mem.parallel_loop_access !14
+  %110 = load i32, i32* @inter_warp_index
+  %111 = load i32, i32* @intra_warp_index
+  %112 = mul i32 %110, 32
+  %thread_idx23 = add i32 %111, %112
+  %113 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx23
+  %114 = load i32, i32* %113, align 4, !llvm.mem.parallel_loop_access !14
+  %add28 = add nsw i32 %109, %114
+  %add29 = add nsw i32 %mul27, %add28
+  %idxprom30 = sext i32 %add29 to i64
+  %arrayidx31 = getelementptr inbounds float, float* %94, i64 %idxprom30
+  %115 = load float, float* %arrayidx31, align 4, !llvm.mem.parallel_loop_access !14
+  %mul32 = fmul contract float %89, %115
+  %116 = load i32, i32* @inter_warp_index
+  %117 = load i32, i32* @intra_warp_index
+  %118 = mul i32 %116, 32
+  %thread_idx3 = add i32 %117, %118
+  %119 = getelementptr float*, float** %a_cuda.addr_intra_warp_, i32 %thread_idx3
+  %120 = load float*, float** %119, align 8, !llvm.mem.parallel_loop_access !14
+  %121 = load i32, i32* @inter_warp_index
+  %122 = load i32, i32* @intra_warp_index
+  %123 = mul i32 %121, 32
+  %thread_idx10 = add i32 %122, %123
+  %124 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx10
+  %125 = load i32, i32* %124, align 4, !llvm.mem.parallel_loop_access !14
+  %126 = load i32, i32* @inter_warp_index
+  %127 = load i32, i32* @intra_warp_index
+  %128 = mul i32 %126, 32
+  %thread_idx32 = add i32 %127, %128
+  %129 = getelementptr i32, i32* %xidx_intra_warp_, i32 %thread_idx32
+  %130 = load i32, i32* %129, align 4, !llvm.mem.parallel_loop_access !14
+  %add33 = add nsw i32 %130, 1
+  %131 = load i32, i32* @inter_warp_index
+  %132 = load i32, i32* @intra_warp_index
+  %133 = mul i32 %131, 32
+  %thread_idx22 = add i32 %132, %133
+  %134 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx22
+  %135 = load i32, i32* %134, align 4, !llvm.mem.parallel_loop_access !14
+  %add34 = add nsw i32 %add33, %135
+  %mul35 = mul nsw i32 %125, %add34
+  %136 = load i32, i32* @inter_warp_index
+  %137 = load i32, i32* @intra_warp_index
+  %138 = mul i32 %136, 32
+  %thread_idx37 = add i32 %137, %138
+  %139 = getelementptr i32, i32* %yidx_intra_warp_, i32 %thread_idx37
+  %140 = load i32, i32* %139, align 4, !llvm.mem.parallel_loop_access !14
+  %141 = load i32, i32* @inter_warp_index
+  %142 = load i32, i32* @intra_warp_index
+  %143 = mul i32 %141, 32
+  %thread_idx21 = add i32 %142, %143
+  %144 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx21
+  %145 = load i32, i32* %144, align 4, !llvm.mem.parallel_loop_access !14
+  %add36 = add nsw i32 %140, %145
+  %add37 = add nsw i32 %mul35, %add36
+  %idxprom38 = sext i32 %add37 to i64
+  %arrayidx39 = getelementptr inbounds float, float* %120, i64 %idxprom38
+  %146 = load float, float* %arrayidx39, align 4, !llvm.mem.parallel_loop_access !14
+  %sub40 = fsub contract float %146, %mul32
+  store float %sub40, float* %arrayidx39, align 4, !llvm.mem.parallel_loop_access !14
+  %147 = load i32, i32* @inter_warp_index
+  %148 = load i32, i32* @intra_warp_index
+  %149 = mul i32 %147, 32
+  %thread_idx36 = add i32 %148, %149
+  %150 = getelementptr i32, i32* %yidx_intra_warp_, i32 %thread_idx36
+  %151 = load i32, i32* %150, align 4, !llvm.mem.parallel_loop_access !14
+  %cmp41 = icmp eq i32 %151, 0
+  br i1 %cmp41, label %if.then42, label %if.end58
+
+if.then42:                                        ; preds = %if.end12
+  %152 = load i32, i32* @inter_warp_index
+  %153 = load i32, i32* @intra_warp_index
+  %154 = mul i32 %152, 32
+  %thread_idx = add i32 %153, %154
+  %155 = getelementptr float*, float** %m_cuda.addr_intra_warp_, i32 %thread_idx
+  %156 = load float*, float** %155, align 8, !llvm.mem.parallel_loop_access !14
+  %157 = load i32, i32* @inter_warp_index
+  %158 = load i32, i32* @intra_warp_index
+  %159 = mul i32 %157, 32
+  %thread_idx9 = add i32 %158, %159
+  %160 = getelementptr i32, i32* %Size.addr_intra_warp_, i32 %thread_idx9
+  %161 = load i32, i32* %160, align 4, !llvm.mem.parallel_loop_access !14
+  %162 = load i32, i32* @inter_warp_index
+  %163 = load i32, i32* @intra_warp_index
+  %164 = mul i32 %162, 32
+  %thread_idx31 = add i32 %163, %164
+  %165 = getelementptr i32, i32* %xidx_intra_warp_, i32 %thread_idx31
+  %166 = load i32, i32* %165, align 4, !llvm.mem.parallel_loop_access !14
+  %add43 = add nsw i32 %166, 1
+  %167 = load i32, i32* @inter_warp_index
+  %168 = load i32, i32* @intra_warp_index
+  %169 = mul i32 %167, 32
+  %thread_idx20 = add i32 %168, %169
+  %170 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx20
+  %171 = load i32, i32* %170, align 4, !llvm.mem.parallel_loop_access !14
+  %add44 = add nsw i32 %add43, %171
+  %mul45 = mul nsw i32 %161, %add44
+  %172 = load i32, i32* @inter_warp_index
+  %173 = load i32, i32* @intra_warp_index
+  %174 = mul i32 %172, 32
+  %thread_idx35 = add i32 %173, %174
+  %175 = getelementptr i32, i32* %yidx_intra_warp_, i32 %thread_idx35
+  %176 = load i32, i32* %175, align 4, !llvm.mem.parallel_loop_access !14
+  %177 = load i32, i32* @inter_warp_index
+  %178 = load i32, i32* @intra_warp_index
+  %179 = mul i32 %177, 32
+  %thread_idx19 = add i32 %178, %179
+  %180 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx19
+  %181 = load i32, i32* %180, align 4, !llvm.mem.parallel_loop_access !14
+  %add46 = add nsw i32 %176, %181
+  %add47 = add nsw i32 %mul45, %add46
+  %idxprom48 = sext i32 %add47 to i64
+  %arrayidx49 = getelementptr inbounds float, float* %156, i64 %idxprom48
+  %182 = load float, float* %arrayidx49, align 4, !llvm.mem.parallel_loop_access !14
+  %183 = load i32, i32* @inter_warp_index
+  %184 = load i32, i32* @intra_warp_index
+  %185 = mul i32 %183, 32
+  %thread_idx7 = add i32 %184, %185
+  %186 = getelementptr float*, float** %b_cuda.addr_intra_warp_, i32 %thread_idx7
+  %187 = load float*, float** %186, align 8, !llvm.mem.parallel_loop_access !14
+  %188 = load i32, i32* @inter_warp_index
+  %189 = load i32, i32* @intra_warp_index
+  %190 = mul i32 %188, 32
+  %thread_idx18 = add i32 %189, %190
+  %191 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx18
+  %192 = load i32, i32* %191, align 4, !llvm.mem.parallel_loop_access !14
+  %idxprom50 = sext i32 %192 to i64
+  %arrayidx51 = getelementptr inbounds float, float* %187, i64 %idxprom50
+  %193 = load float, float* %arrayidx51, align 4, !llvm.mem.parallel_loop_access !14
+  %mul52 = fmul contract float %182, %193
+  %194 = load i32, i32* @inter_warp_index
+  %195 = load i32, i32* @intra_warp_index
+  %196 = mul i32 %194, 32
+  %thread_idx6 = add i32 %195, %196
+  %197 = getelementptr float*, float** %b_cuda.addr_intra_warp_, i32 %thread_idx6
+  %198 = load float*, float** %197, align 8, !llvm.mem.parallel_loop_access !14
+  %199 = load i32, i32* @inter_warp_index
+  %200 = load i32, i32* @intra_warp_index
+  %201 = mul i32 %199, 32
+  %thread_idx30 = add i32 %200, %201
+  %202 = getelementptr i32, i32* %xidx_intra_warp_, i32 %thread_idx30
+  %203 = load i32, i32* %202, align 4, !llvm.mem.parallel_loop_access !14
+  %add53 = add nsw i32 %203, 1
+  %204 = load i32, i32* @inter_warp_index
+  %205 = load i32, i32* @intra_warp_index
+  %206 = mul i32 %204, 32
+  %thread_idx17 = add i32 %205, %206
+  %207 = getelementptr i32, i32* %t.addr_intra_warp_, i32 %thread_idx17
+  %208 = load i32, i32* %207, align 4, !llvm.mem.parallel_loop_access !14
+  %add54 = add nsw i32 %add53, %208
+  %idxprom55 = sext i32 %add54 to i64
+  %arrayidx56 = getelementptr inbounds float, float* %198, i64 %idxprom55
+  %209 = load float, float* %arrayidx56, align 4, !llvm.mem.parallel_loop_access !14
+  %sub57 = fsub contract float %209, %mul52
+  store float %sub57, float* %arrayidx56, align 4, !llvm.mem.parallel_loop_access !14
+  br label %if.end58
+
+if.end58:                                         ; preds = %if.then, %if.then11, %if.then42, %if.end12
+  br label %intra_warp_inc
+
+reset_block:                                      ; preds = %intra_warp_cond
+  store i32 0, i32* @intra_warp_index
+  br label %if.end58_after_block_sync_0
+
+if.end58_after_block_sync_0:                      ; preds = %reset_block
+  br label %if.end58_after_block_sync_0_after_block_sync_2
+
+if.end58_after_block_sync_0_after_block_sync_2:   ; preds = %if.end58_after_block_sync_0
+  ret void
+_ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_yEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.tid.y()
+  ret i32 %0
+_ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_yEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.ctaid.y()
+  ret i32 %0
+_ZN25__cuda_builtin_blockDim_t17__fetch_builtin_yEv
+
+entry:
+  %0 = call i32 @llvm.nvvm.read.ptx.sreg.ntid.y()
+  ret i32 %0
+llvm.nvvm.read.ptx.sreg.tid.x
+llvm.nvvm.read.ptx.sreg.ctaid.x
+llvm.nvvm.read.ptx.sreg.ntid.x
+llvm.nvvm.read.ptx.sreg.tid.y
+llvm.nvvm.read.ptx.sreg.ctaid.y
+llvm.nvvm.read.ptx.sreg.ntid.y
+warp_any
+warp_all
+llvm.nvvm.barrier0
+jchen706@boson:/data/jchen/rodi/rodinia/cuda/gaussian/newg/gaussian/testtry$ exit
+
+Script done on 2022-01-08 20:47:57-0500

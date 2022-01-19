@@ -1,0 +1,4 @@
+Script started on 2022-01-08 17:48:38-0500
+jchen706@boson:/data/jchen/rodi/rodinia/cuda/gaussian/newg/gaussian/testtry$ exit
+
+Script done on 2022-01-08 17:48:43-0500

@@ -1,0 +1,87 @@
+=> 0x402811 <_Z4Fan1PfS_ii_wrapper+17>:
+    mov    (%rcx),%edx
+
+
+=> 0x40240f <_Z4Fan1PfS_ii+79>:
+    mov    %r12,-0x2048(%rbp,%rax,8)
+(gdb) x/i $pc
+=> 0x40240f <_Z4Fan1PfS_ii+79>:
+    mov    %r12,-0x2048(%rbp,%rax,8)
+(gdb) x/i $pc
+=> 0x40240f <_Z4Fan1PfS_ii+79>:
+    mov    %r12,-0x2048(%rbp,%rax,8)
+
+
+    -8264(   ,8)
+
+0x7ffff6a79d80
+0xffffffffe0f65400
+
+140737331568000 - 8 (-520727552)
+
+
+−4.16582042×10^9
+0x7ffff6a79d80 - 8()
+
+(gdb) p $rbp+$rax*8+(-0x2048)
+$2 = (void *) 0x7ffefe5a1d38
+
+
+0x00000000004023c4 in Fan1(float*, float*, int, int) ()
+(gdb) x/i $pc
+=> 0x4023c4 <_Z4Fan1PfS_ii+68>: mov    -0x2c(%rbp),%ecx
+(gdb) p $eax
+$41 = -150490464
+(gdb) p thread
+thread-freeres.c       thread_arena           thread_memory_size
+thread-shared-types.h  thread_db.h            thread_rpc_vars
+(gdb) p thread
+thread-freeres.c       thread_arena           thread_memory_size
+thread-shared-types.h  thread_db.h            thread_rpc_vars
+(gdb) p (float*) $eax
+$42 = (float *) 0xfffffffff707b2a0
+(gdb) p *(float*) $eax
+Cannot access memory at address 0xfffffffff707b2a0
+(gdb) p *(int*) $eax
+Cannot access memory at address 0xfffffffff707b2a0
+(gdb) ls
+Undefined command: "ls".  Try "help".
+(gdb) si
+0x00000000004023c7 in Fan1(float*, float*, int, int) ()
+(gdb) x/i $pc
+=> 0x4023c7 <_Z4Fan1PfS_ii+71>: shl    $0x5,%eax
+(gdb) p $eax
+$43 = -150490464
+(gdb) si
+0x00000000004023ca in Fan1(float*, float*, int, int) ()
+(gdb) x/i $pc
+=> 0x4023ca <_Z4Fan1PfS_ii+74>: add    %eax,%ecx
+(gdb) si
+0x00000000004023cc in Fan1(float*, float*, int, int) ()
+(gdb) p $ecx
+$44 = -520727552
+(gdb) x/i $pc
+=> 0x4023cc <_Z4Fan1PfS_ii+76>: movslq %ecx,%rax
+(gdb) si
+0x00000000004023cf in Fan1(float*, float*, int, int) ()
+(gdb) x/i $pc
+=> 0x4023cf <_Z4Fan1PfS_ii+79>: mov    %r12,-0x2048(%rbp,%rax,8)
+(gdb) p %r12
+A syntax error in expression, near `%r12'.
+(gdb) p $r12
+$45 = 6408112
+(gdb) p $rax
+$46 = -520727552
+(gdb) si
+
+Thread 2 "demo" received signal SIGSEGV, Segmentation fault.
+0x00000000004023cf in Fan1(float*, float*, int, int) ()
+(gdb) p $rbp
+$47 = (void *) 0x7ffff6a79d80
+(gdb) p/d $rbp
+$48 = 140737331568000
+(gdb) p/h $rax
+Size letters are meaningless in "print" command.
+(gdb) p/x $rax
+$49 = 0xffffffffe0f65400
+(gdb) 
