@@ -7,17 +7,9 @@
 .address_size 64
 
 	// .weak	cudaMalloc
-.extern .func  (.param .b32 func_retval0) vprintf
-(
-	.param .b64 vprintf_param_0,
-	.param .b64 vprintf_param_1
-)
-;
 .global .align 1 .b8 threadIdx[1];
 .global .align 1 .b8 blockIdx[1];
 .global .align 1 .b8 blockDim[1];
-.global .align 1 .b8 _$_str[63] = {98, 108, 111, 99, 107, 73, 68, 120, 46, 120, 58, 32, 37, 100, 44, 32, 116, 104, 114, 101, 97, 100, 73, 100, 120, 46, 120, 58, 32, 37, 100, 44, 32, 83, 105, 122, 101, 58, 32, 37, 100, 44, 32, 116, 58, 37, 100, 44, 32, 83, 105, 122, 101, 45, 49, 45, 116, 58, 32, 37, 100, 10, 0};
-.global .align 1 .b8 _$_str1[98] = {98, 108, 111, 99, 107, 73, 100, 120, 46, 120, 58, 32, 37, 100, 44, 32, 116, 104, 114, 101, 97, 100, 73, 100, 120, 46, 120, 58, 32, 37, 100, 44, 32, 98, 108, 111, 99, 107, 73, 100, 120, 46, 121, 58, 32, 37, 100, 44, 32, 116, 104, 114, 101, 97, 100, 73, 100, 120, 46, 121, 58, 32, 37, 100, 44, 32, 98, 108, 111, 99, 107, 68, 105, 109, 46, 120, 58, 32, 37, 100, 44, 32, 98, 108, 111, 99, 107, 68, 105, 109, 46, 121, 58, 32, 37, 100, 10, 0};
 
 .weak .func  (.param .b32 func_retval0) cudaMalloc(
 	.param .b64 cudaMalloc_param_0,
@@ -179,13 +171,13 @@
 	.param .u32 _Z4Fan1PfS_ii_param_3
 )
 {
-	.local .align 8 .b8 	__local_depot6[48];
+	.local .align 8 .b8 	__local_depot6[24];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
-	.reg .pred 	%p<3>;
+	.reg .pred 	%p<2>;
 	.reg .f32 	%f<4>;
-	.reg .b32 	%r<40>;
-	.reg .b64 	%rd<25>;
+	.reg .b32 	%r<23>;
+	.reg .b64 	%rd<21>;
 
 	mov.u64 	%SPL, __local_depot6;
 	cvta.local.u64 	%SP, %SPL;
@@ -214,84 +206,39 @@
 	@%p1 bra 	LBB6_2;
 	bra.uni 	LBB6_1;
 LBB6_1:
-	mov.u32 	%r12, %ctaid.x;
-	mov.u32 	%r13, %tid.x;
-	ld.u32 	%r14, [%SP+16];
-	ld.u32 	%r15, [%SP+20];
-	not.b32 	%r16, %r15;
-	add.s32 	%r17, %r16, %r14;
-	st.u32 	[%SP+24], %r12;
-	add.u64 	%rd7, %SP, 24;
-	or.b64  	%rd8, %rd7, 4;
-	st.u32 	[%rd8], %r13;
-	st.u32 	[%SP+32], %r14;
-	st.u32 	[%SP+36], %r15;
-	st.u32 	[%SP+40], %r17;
-	mov.u64 	%rd9, _$_str;
-	cvta.global.u64 	%rd10, %rd9;
-	{ // callseq 0, 0
-	.reg .b32 temp_param_reg;
-	.param .b64 param0;
-	st.param.b64 	[param0+0], %rd10;
-	.param .b64 param1;
-	st.param.b64 	[param1+0], %rd7;
-	.param .b32 retval0;
-	call.uni (retval0), 
-	vprintf, 
-	(
-	param0, 
-	param1
-	);
-	ld.param.b32 	%r18, [retval0+0];
-	} // callseq 0
-	bra.uni 	LBB6_2;
+	bra.uni 	LBB6_3;
 LBB6_2:
-	mov.u32 	%r20, %tid.x;
-	mov.u32 	%r21, %ctaid.x;
-	mov.u32 	%r22, %ntid.x;
-	mul.lo.s32 	%r23, %r21, %r22;
-	add.s32 	%r24, %r20, %r23;
-	ld.u32 	%r25, [%SP+16];
-	ld.u32 	%r26, [%SP+20];
-	not.b32 	%r27, %r26;
-	add.s32 	%r28, %r27, %r25;
-	setp.lt.u32 	%p2, %r24, %r28;
-	@%p2 bra 	LBB6_4;
+	ld.u64 	%rd7, [%SP+8];
+	ld.u32 	%r12, [%SP+16];
+	mov.u32 	%r13, %ntid.x;
+	mov.u32 	%r14, %ctaid.x;
+	mul.lo.s32 	%r15, %r13, %r14;
+	mov.u32 	%r16, %tid.x;
+	add.s32 	%r17, %r15, %r16;
+	ld.u32 	%r18, [%SP+20];
+	add.s32 	%r19, %r17, %r18;
+	add.s32 	%r20, %r19, 1;
+	mul.lo.s32 	%r21, %r12, %r20;
+	cvt.u64.u32 	%rd8, %r21;
+	shl.b64 	%rd9, %rd8, 2;
+	add.s64 	%rd10, %rd7, %rd9;
+	cvt.s64.s32 	%rd11, %r18;
+	shl.b64 	%rd12, %rd11, 2;
+	add.s64 	%rd13, %rd10, %rd12;
+	ld.f32 	%f1, [%rd13];
+	mul.lo.s32 	%r22, %r12, %r18;
+	cvt.s64.s32 	%rd14, %r22;
+	shl.b64 	%rd15, %rd14, 2;
+	add.s64 	%rd16, %rd7, %rd15;
+	add.s64 	%rd17, %rd16, %rd12;
+	ld.f32 	%f2, [%rd17];
+	div.rn.f32 	%f3, %f1, %f2;
+	ld.u64 	%rd18, [%SP+0];
+	add.s64 	%rd19, %rd18, %rd9;
+	add.s64 	%rd20, %rd19, %rd12;
+	st.f32 	[%rd20], %f3;
 	bra.uni 	LBB6_3;
 LBB6_3:
-	bra.uni 	LBB6_5;
-LBB6_4:
-	ld.u64 	%rd11, [%SP+8];
-	ld.u32 	%r29, [%SP+16];
-	mov.u32 	%r30, %ntid.x;
-	mov.u32 	%r31, %ctaid.x;
-	mul.lo.s32 	%r32, %r30, %r31;
-	mov.u32 	%r33, %tid.x;
-	add.s32 	%r34, %r32, %r33;
-	ld.u32 	%r35, [%SP+20];
-	add.s32 	%r36, %r34, %r35;
-	add.s32 	%r37, %r36, 1;
-	mul.lo.s32 	%r38, %r29, %r37;
-	cvt.u64.u32 	%rd12, %r38;
-	shl.b64 	%rd13, %rd12, 2;
-	add.s64 	%rd14, %rd11, %rd13;
-	cvt.s64.s32 	%rd15, %r35;
-	shl.b64 	%rd16, %rd15, 2;
-	add.s64 	%rd17, %rd14, %rd16;
-	ld.f32 	%f1, [%rd17];
-	mul.lo.s32 	%r39, %r29, %r35;
-	cvt.s64.s32 	%rd18, %r39;
-	shl.b64 	%rd19, %rd18, 2;
-	add.s64 	%rd20, %rd11, %rd19;
-	add.s64 	%rd21, %rd20, %rd16;
-	ld.f32 	%f2, [%rd21];
-	div.rn.f32 	%f3, %f1, %f2;
-	ld.u64 	%rd22, [%SP+0];
-	add.s64 	%rd23, %rd22, %rd13;
-	add.s64 	%rd24, %rd23, %rd16;
-	st.f32 	[%rd24], %f3;
-	bra.uni 	LBB6_5;
-LBB6_5:
 	ret;
 
 }
@@ -305,13 +252,13 @@ LBB6_5:
 	.param .u32 _Z4Fan2PfS_S_iii_param_5
 )
 {
-	.local .align 8 .b8 	__local_depot7[72];
+	.local .align 8 .b8 	__local_depot7[48];
 	.reg .b64 	%SP;
 	.reg .b64 	%SPL;
 	.reg .pred 	%p<4>;
 	.reg .f32 	%f<11>;
-	.reg .b32 	%r<55>;
-	.reg .b64 	%rd<36>;
+	.reg .b32 	%r<53>;
+	.reg .b64 	%rd<32>;
 
 	mov.u64 	%SPL, __local_depot7;
 	cvta.local.u64 	%SP, %SPL;
@@ -374,91 +321,66 @@ LBB7_4:
 	mov.u32 	%r29, %tid.y;
 	add.s32 	%r30, %r28, %r29;
 	st.u32 	[%SP+40], %r30;
-	st.u32 	[%SP+48], %r21;
-	add.u64 	%rd10, %SP, 48;
-	or.b64  	%rd11, %rd10, 4;
-	st.u32 	[%rd11], %r24;
-	st.u32 	[%SP+56], %r26;
-	st.u32 	[%SP+60], %r29;
-	st.u32 	[%SP+64], %r22;
-	st.u32 	[%SP+68], %r27;
-	mov.u64 	%rd12, _$_str1;
-	cvta.global.u64 	%rd13, %rd12;
-	{ // callseq 1, 0
-	.reg .b32 temp_param_reg;
-	.param .b64 param0;
-	st.param.b64 	[param0+0], %rd13;
-	.param .b64 param1;
-	st.param.b64 	[param1+0], %rd10;
-	.param .b32 retval0;
-	call.uni (retval0), 
-	vprintf, 
-	(
-	param0, 
-	param1
-	);
-	ld.param.b32 	%r31, [retval0+0];
-	} // callseq 1
-	ld.u64 	%rd14, [%SP+0];
-	ld.u32 	%r33, [%SP+24];
-	ld.u32 	%r34, [%SP+36];
-	ld.u32 	%r35, [%SP+32];
-	add.s32 	%r36, %r34, %r35;
-	add.s32 	%r37, %r36, 1;
-	mul.lo.s32 	%r38, %r33, %r37;
-	add.s32 	%r39, %r38, %r35;
-	cvt.s64.s32 	%rd15, %r39;
+	ld.u64 	%rd10, [%SP+0];
+	ld.u32 	%r31, [%SP+24];
+	ld.u32 	%r32, [%SP+36];
+	ld.u32 	%r33, [%SP+32];
+	add.s32 	%r34, %r32, %r33;
+	add.s32 	%r35, %r34, 1;
+	mul.lo.s32 	%r36, %r31, %r35;
+	add.s32 	%r37, %r36, %r33;
+	cvt.s64.s32 	%rd11, %r37;
+	shl.b64 	%rd12, %rd11, 2;
+	add.s64 	%rd13, %rd10, %rd12;
+	ld.f32 	%f1, [%rd13];
+	ld.u64 	%rd14, [%SP+8];
+	mul.lo.s32 	%r38, %r31, %r33;
+	ld.u32 	%r39, [%SP+40];
+	add.s32 	%r40, %r39, %r33;
+	add.s32 	%r41, %r38, %r40;
+	cvt.s64.s32 	%rd15, %r41;
 	shl.b64 	%rd16, %rd15, 2;
 	add.s64 	%rd17, %rd14, %rd16;
-	ld.f32 	%f1, [%rd17];
-	ld.u64 	%rd18, [%SP+8];
-	mul.lo.s32 	%r40, %r33, %r35;
-	ld.u32 	%r41, [%SP+40];
-	add.s32 	%r42, %r41, %r35;
-	add.s32 	%r43, %r40, %r42;
-	cvt.s64.s32 	%rd19, %r43;
-	shl.b64 	%rd20, %rd19, 2;
-	add.s64 	%rd21, %rd18, %rd20;
-	ld.f32 	%f2, [%rd21];
-	add.s32 	%r44, %r38, %r42;
-	cvt.s64.s32 	%rd22, %r44;
-	shl.b64 	%rd23, %rd22, 2;
-	add.s64 	%rd24, %rd18, %rd23;
-	ld.f32 	%f3, [%rd24];
+	ld.f32 	%f2, [%rd17];
+	add.s32 	%r42, %r36, %r40;
+	cvt.s64.s32 	%rd18, %r42;
+	shl.b64 	%rd19, %rd18, 2;
+	add.s64 	%rd20, %rd14, %rd19;
+	ld.f32 	%f3, [%rd20];
 	neg.f32 	%f4, %f1;
 	fma.rn.f32 	%f5, %f4, %f2, %f3;
-	st.f32 	[%rd24], %f5;
-	ld.u32 	%r45, [%SP+40];
-	setp.ne.s32 	%p3, %r45, 0;
+	st.f32 	[%rd20], %f5;
+	ld.u32 	%r43, [%SP+40];
+	setp.ne.s32 	%p3, %r43, 0;
 	@%p3 bra 	LBB7_6;
 	bra.uni 	LBB7_5;
 LBB7_5:
-	ld.u64 	%rd25, [%SP+0];
-	ld.u32 	%r46, [%SP+24];
-	ld.u32 	%r47, [%SP+36];
-	ld.u32 	%r48, [%SP+32];
-	add.s32 	%r49, %r47, %r48;
-	add.s32 	%r50, %r49, 1;
-	mul.lo.s32 	%r51, %r46, %r50;
-	ld.u32 	%r52, [%SP+40];
-	add.s32 	%r53, %r52, %r48;
-	add.s32 	%r54, %r51, %r53;
-	cvt.s64.s32 	%rd26, %r54;
+	ld.u64 	%rd21, [%SP+0];
+	ld.u32 	%r44, [%SP+24];
+	ld.u32 	%r45, [%SP+36];
+	ld.u32 	%r46, [%SP+32];
+	add.s32 	%r47, %r45, %r46;
+	add.s32 	%r48, %r47, 1;
+	mul.lo.s32 	%r49, %r44, %r48;
+	ld.u32 	%r50, [%SP+40];
+	add.s32 	%r51, %r50, %r46;
+	add.s32 	%r52, %r49, %r51;
+	cvt.s64.s32 	%rd22, %r52;
+	shl.b64 	%rd23, %rd22, 2;
+	add.s64 	%rd24, %rd21, %rd23;
+	ld.f32 	%f6, [%rd24];
+	ld.u64 	%rd25, [%SP+16];
+	cvt.s64.s32 	%rd26, %r46;
 	shl.b64 	%rd27, %rd26, 2;
 	add.s64 	%rd28, %rd25, %rd27;
-	ld.f32 	%f6, [%rd28];
-	ld.u64 	%rd29, [%SP+16];
-	cvt.s64.s32 	%rd30, %r48;
-	shl.b64 	%rd31, %rd30, 2;
-	add.s64 	%rd32, %rd29, %rd31;
-	ld.f32 	%f7, [%rd32];
-	cvt.s64.s32 	%rd33, %r50;
-	shl.b64 	%rd34, %rd33, 2;
-	add.s64 	%rd35, %rd29, %rd34;
-	ld.f32 	%f8, [%rd35];
+	ld.f32 	%f7, [%rd28];
+	cvt.s64.s32 	%rd29, %r48;
+	shl.b64 	%rd30, %rd29, 2;
+	add.s64 	%rd31, %rd25, %rd30;
+	ld.f32 	%f8, [%rd31];
 	neg.f32 	%f9, %f6;
 	fma.rn.f32 	%f10, %f9, %f7, %f8;
-	st.f32 	[%rd35], %f10;
+	st.f32 	[%rd31], %f10;
 	bra.uni 	LBB7_6;
 LBB7_6:
 	ret;

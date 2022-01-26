@@ -1,7 +1,7 @@
-# 1 "gaussian.cu"
+# 1 "backprop_cuda_kernel.cu"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
-# 667 "<built-in>" 3
+# 666 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
 # 1 "/data/jchen/llvminstall/lib/clang/10.0.1/include/__clang_cuda_runtime_wrapper.h" 1 3
@@ -17886,18 +17886,18 @@ namespace std __attribute__ ((__visibility__ ("default")))
       static const bool is_specialized = true;
 
       static long double
-      min() throw() { return 3.36210314311209350626e-4932L; }
+      min() throw() { return 2.2250738585072014e-308L; }
 
       static long double
-      max() throw() { return 1.18973149535723176502e+4932L; }
+      max() throw() { return 1.7976931348623157e+308L; }
 
 
 
 
 
 
-      static const int digits = 64;
-      static const int digits10 = 18;
+      static const int digits = 53;
+      static const int digits10 = 15;
 
 
 
@@ -17908,15 +17908,15 @@ namespace std __attribute__ ((__visibility__ ("default")))
       static const int radix = 2;
 
       static long double
-      epsilon() throw() { return 1.08420217248550443401e-19L; }
+      epsilon() throw() { return 2.2204460492503131e-16L; }
 
       static long double
       round_error() throw() { return 0.5L; }
 
-      static const int min_exponent = (-16381);
-      static const int min_exponent10 = (-4931);
-      static const int max_exponent = 16384;
-      static const int max_exponent10 = 4932;
+      static const int min_exponent = (-1021);
+      static const int min_exponent10 = (-307);
+      static const int max_exponent = 1024;
+      static const int max_exponent10 = 308;
 
       static const bool has_infinity = 1;
       static const bool has_quiet_NaN = 1;
@@ -17936,7 +17936,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
       signaling_NaN() throw() { return __builtin_nansl(""); }
 
       static long double
-      denorm_min() throw() { return 3.64519953188247460253e-4951L; }
+      denorm_min() throw() { return 4.9406564584124654e-324L; }
 
       static const bool is_iec559
  = has_infinity && has_quiet_NaN && has_denorm == denorm_present;
@@ -18393,130 +18393,6 @@ inline __attribute__((device)) unsigned int __activemask() {
 inline __attribute__((device)) unsigned int __fns(unsigned mask, unsigned base, int offset) {
   return __nvvm_fns(mask, base, offset);
 }
-
-
-
-
-
-inline __attribute__((device)) unsigned int __match32_any_sync(unsigned int mask,
-                                                  unsigned int value) {
-  return __nvvm_match_any_sync_i32(mask, value);
-}
-
-inline __attribute__((device)) unsigned long long
-__match64_any_sync(unsigned int mask, unsigned long long value) {
-  return __nvvm_match_any_sync_i64(mask, value);
-}
-
-inline __attribute__((device)) unsigned int
-__match32_all_sync(unsigned int mask, unsigned int value, int *pred) {
-  return __nvvm_match_all_sync_i32p(mask, value, pred);
-}
-
-inline __attribute__((device)) unsigned long long
-__match64_all_sync(unsigned int mask, unsigned long long value, int *pred) {
-  return __nvvm_match_all_sync_i64p(mask, value, pred);
-}
-
-# 1 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 1 3
-# 79 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 3
-# 1 "/usr/local/cuda-10.1/targets/x86_64-linux/include/builtin_types.h" 1 3
-# 80 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 2 3
-
-# 1 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/host_defines.h" 1 3
-# 82 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 2 3
-# 93 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 3
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, unsigned value) {
-  return __match32_any_sync(mask, value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, int value) {
-  return __match32_any_sync(mask, value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, unsigned long value) {
-  return (sizeof(long) == sizeof(long long)) ?
-    __match64_any_sync(mask, (unsigned long long)value):
-    __match32_any_sync(mask, (unsigned)value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, long value) {
-  return (sizeof(long) == sizeof(long long)) ?
-    __match64_any_sync(mask, (unsigned long long)value):
-    __match32_any_sync(mask, (unsigned)value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, unsigned long long value) {
-  return __match64_any_sync(mask, value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, long long value) {
-  return __match64_any_sync(mask, value);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, float value) {
-  return __match32_any_sync(mask, float_as_uint(value));
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_any_sync(unsigned mask, double value) {
-  return __match64_any_sync(mask, __double_as_longlong(value));
-}
-
-
-
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, unsigned value, int *pred) {
-  return __match32_all_sync(mask, value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, int value, int *pred) {
-  return __match32_all_sync(mask, value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, unsigned long value, int *pred) {
-  return (sizeof(long) == sizeof(long long)) ?
-    __match64_all_sync(mask, (unsigned long long)value, pred):
-    __match32_all_sync(mask, (unsigned)value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, long value, int *pred) {
-  return (sizeof(long) == sizeof(long long)) ?
-    __match64_all_sync(mask, (unsigned long long)value, pred):
-    __match32_all_sync(mask, (unsigned)value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, unsigned long long value, int *pred) {
-  return __match64_all_sync(mask, value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, long long value, int *pred) {
-  return __match64_all_sync(mask, value, pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, float value, int *pred) {
-  return __match32_all_sync(mask, float_as_uint(value), pred);
-}
-
-static __attribute__((device)) __inline__ unsigned int __match_all_sync(unsigned mask, double value, int *pred) {
-  return __match64_all_sync(mask, __double_as_longlong(value), pred);
-}
-
-static __attribute__((device)) __inline__ void __nanosleep(unsigned int ns) {
-    asm volatile("nanosleep.u32 %0;" :: "r"(ns));
-}
-# 180 "/usr/local/cuda-10.1/targets/x86_64-linux/include/crt/sm_70_rt.hpp" 3
-static __attribute__((device)) __inline__ unsigned short int atomicCAS(unsigned short int *address, unsigned short int compare, unsigned short int val) {
-    unsigned short r;
-    asm volatile ("{ atom.cas.b16 %0,[%1],%2,%3; }\n"
-                  : "=h"(r)
-                  : "l"(address),
-                      "h"(compare),
-                      "h"(val)
-                  : "memory");
-
-   return r;
-}
-# 252 "/data/jchen/llvminstall/lib/clang/10.0.1/include/__clang_cuda_intrinsics.h" 2 3
 # 264 "/data/jchen/llvminstall/lib/clang/10.0.1/include/__clang_cuda_intrinsics.h" 3
 inline __attribute__((device)) char __ldg(const char *ptr) { return __nvvm_ldg_c(ptr); }
 inline __attribute__((device)) short __ldg(const short *ptr) { return __nvvm_ldg_s(ptr); }
@@ -19231,9 +19107,6 @@ struct curandStateMtgp32 {
 
 typedef struct curandStateMtgp32 curandStateMtgp32_t;
 # 112 "/usr/local/cuda-10.1/targets/x86_64-linux/include/curand_mtgp32_kernel.h" 2 3
-# 121 "/usr/local/cuda-10.1/targets/x86_64-linux/include/curand_mtgp32_kernel.h" 3
-extern const __cuda_builtin_blockDim_t blockDim;
-extern const __cuda_builtin_threadIdx_t threadIdx;
 # 135 "/usr/local/cuda-10.1/targets/x86_64-linux/include/curand_mtgp32_kernel.h" 3
 static __inline__ __attribute__((always_inline)) __attribute__((device)) __attribute__((host)) unsigned int para_rec(mtgp32_kernel_params_t * k,unsigned int X1, unsigned int X2, unsigned int Y, int bid) {
     unsigned int X = (X1 & k->mask[0]) ^ X2;
@@ -19286,14 +19159,14 @@ static __inline__ __attribute__((always_inline)) __attribute__((device)) __attri
            state->s[(t + state->offset + pos -1) & 1023],
            state->pIdx);
 
-
+    __syncthreads();
 
     if (t == 0)
     {
         state->offset = (state->offset + d) & 1023;
     }
 
-
+    __syncthreads();
 
     return o;
 
@@ -19317,14 +19190,14 @@ static __inline__ __attribute__((always_inline)) __attribute__((device)) __attri
            state->s[(t + state->offset + pos -1) & 1023],
            state->pIdx);
 
-
+    __syncthreads();
 
     if (index == 0)
     {
         state->offset = (state->offset + n) & 1023;
     }
 
-
+    __syncthreads();
 
     return o;
 }
@@ -19353,14 +19226,14 @@ static __inline__ __attribute__((always_inline)) __attribute__((device)) __attri
                         state->s[(t + state->offset + pos -1) & 1023],
                         state->pIdx);
 
-
+    __syncthreads();
 
     if (threadIdx.x == 0)
     {
         state->offset = (state->offset + d) & 1023;
     }
 
-
+    __syncthreads();
 
     memcpy(&o_f, &o_u, sizeof(o_u));
     return o_f;
@@ -19385,14 +19258,14 @@ static __inline__ __attribute__((always_inline)) __attribute__((device)) __attri
                         state->s[(t + state->offset + pos -1) & 1023],
                         state->pIdx);
 
-
+    __syncthreads();
 
     if (threadIdx.x == 0)
     {
         state->offset = (state->offset + n) & 1023;
     }
 
-
+    __syncthreads();
 
     memcpy(&o_f, &o_u, sizeof(o_u));
     return o_f;
@@ -19403,8 +19276,12 @@ extern "C" unsigned __cudaPushCallConfiguration(dim3 gridDim, dim3 blockDim,
                                                 size_t sharedMem = 0,
                                                 void *stream = 0);
 # 2 "<built-in>" 2
-# 1 "gaussian.cu" 2
-# 15 "gaussian.cu"
+# 1 "backprop_cuda_kernel.cu" 2
+
+
+
+
+
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
@@ -20151,111 +20028,54 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 extern void funlockfile (FILE *__stream) throw ();
 # 868 "/usr/include/stdio.h" 3 4
 }
-# 16 "gaussian.cu" 2
-# 1 "/usr/lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/stdlib.h" 1 3
-# 17 "gaussian.cu" 2
-# 1 "/usr/include/x86_64-linux-gnu/sys/time.h" 1 3 4
-# 34 "/usr/include/x86_64-linux-gnu/sys/time.h" 3 4
+# 7 "backprop_cuda_kernel.cu" 2
+# 1 "./backprop.h" 1
+# 16 "./backprop.h"
+typedef struct {
+  int input_n;
+  int hidden_n;
+  int output_n;
+
+  float *input_units;
+  float *hidden_units;
+  float *output_units;
+
+  float *hidden_delta;
+  float *output_delta;
+
+  float *target;
+
+  float **input_weights;
+  float **hidden_weights;
+
+
+  float **input_prev_weights;
+  float **hidden_prev_weights;
+} BPNN;
+
+
+
+
+
+
+
 extern "C" {
-# 52 "/usr/include/x86_64-linux-gnu/sys/time.h" 3 4
-struct timezone
-  {
-    int tz_minuteswest;
-    int tz_dsttime;
-  };
+void bpnn_train_cuda(BPNN *net, float *eo, float *eh);
 
-typedef struct timezone *__restrict __timezone_ptr_t;
-# 68 "/usr/include/x86_64-linux-gnu/sys/time.h" 3 4
-extern int gettimeofday (struct timeval *__restrict __tv,
-    __timezone_ptr_t __tz) throw () __attribute__ ((__nonnull__ (1)));
+void bpnn_initialize(int seed);
+BPNN *bpnn_create(int n_in, int n_hidden, int n_out);
+void bpnn_free(BPNN *net);
+
+void bpnn_train(BPNN *net, float *eo, float *eh);
 
 
+void bpnn_feedforward(BPNN *net);
 
-
-extern int settimeofday (const struct timeval *__tv,
-    const struct timezone *__tz)
-     throw ();
-
-
-
-
-
-extern int adjtime (const struct timeval *__delta,
-      struct timeval *__olddelta) throw ();
-
-
-
-
-enum __itimer_which
-  {
-
-    ITIMER_REAL = 0,
-
-
-    ITIMER_VIRTUAL = 1,
-
-
-
-    ITIMER_PROF = 2
-
-  };
-
-
-
-struct itimerval
-  {
-
-    struct timeval it_interval;
-
-    struct timeval it_value;
-  };
-
-
-
-
-
-
-typedef int __itimer_which_t;
-
-
-
-
-extern int getitimer (__itimer_which_t __which,
-        struct itimerval *__value) throw ();
-
-
-
-
-extern int setitimer (__itimer_which_t __which,
-        const struct itimerval *__restrict __new,
-        struct itimerval *__restrict __old) throw ();
-
-
-
-
-extern int utimes (const char *__file, const struct timeval __tvp[2])
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-
-extern int lutimes (const char *__file, const struct timeval __tvp[2])
-     throw () __attribute__ ((__nonnull__ (1)));
-
-
-extern int futimes (int __fd, const struct timeval __tvp[2]) throw ();
-
-
-
-
-
-
-extern int futimesat (int __fd, const char *__file,
-        const struct timeval __tvp[2]) throw ();
-# 186 "/usr/include/x86_64-linux-gnu/sys/time.h" 3 4
+void bpnn_save(BPNN* net, char *filename);
+BPNN *bpnn_read(char * filename);
+void load(BPNN *net);
 }
-# 18 "gaussian.cu" 2
-
-
+# 8 "backprop_cuda_kernel.cu" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/math.h" 1 3
 # 36 "/usr/lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/math.h" 3
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/cmath" 1 3
@@ -20299,464 +20119,97 @@ using std::isless;
 using std::islessequal;
 using std::islessgreater;
 using std::isunordered;
-# 21 "gaussian.cu" 2
-# 59 "gaussian.cu"
-int Size;
-float *a, *b, *finalVec;
-float *m;
-
-FILE *fp;
-
-void InitProblemOnce(char *filename);
-void InitPerRun();
-void ForwardSub();
-void BackSub();
-__attribute__((global)) void Fan1(float *m, float *a, int Size, int t);
-__attribute__((global)) void Fan2(float *m, float *a, float *b,int Size, int j1, int t);
-void InitMat(float *ary, int nrow, int ncol);
-void InitAry(float *ary, int ary_size);
-void PrintMat(float *ary, int nrow, int ncolumn);
-void PrintAry(float *ary, int ary_size);
-void PrintDeviceProperties();
-void checkCUDAError(const char *msg);
-
-unsigned int totalKernelTime = 0;
+# 9 "backprop_cuda_kernel.cu" 2
 
 
-void
-create_matrix(float *m, int size){
-  int i,j;
-  float lamda = -0.01;
-  float coe[2*size-1];
-  float coe_i =0.0;
 
-  for (i=0; i < size; i++)
-    {
-      coe_i = 10*exp(lamda*i);
-      j=size-1+i;
-      coe[j]=coe_i;
-      j=size-1-i;
-      coe[j]=coe_i;
-    }
-
-
-  for (i=0; i < size; i++) {
-      for (j=0; j < size; j++) {
-    m[i*size+j]=coe[size-1-i+j];
-      }
-  }
-
-
-}
-
-
-int main(int argc, char *argv[])
+__attribute__((global)) void
+bpnn_layerforward_CUDA(float *input_cuda,
+                    float *output_hidden_cuda,
+        float *input_hidden_cuda,
+        float *hidden_partial_sum,
+        int in,
+        int hid)
 {
-  printf("WG size of kernel 1 = %d, WG size of kernel 2= %d X %d\n", 512, 1, 1);
-    int verbose = 1;
-    int i, j;
-    char flag;
-    if (argc < 2) {
-        printf("Usage: gaussian -f filename / -s size [-q]\n\n");
-        printf("-q (quiet) suppresses printing the matrix and result values.\n");
-        printf("-f (filename) path of input file\n");
-        printf("-s (size) size of matrix. Create matrix and rhs in this program \n");
-        printf("The first line of the file contains the dimension of the matrix, n.");
-        printf("The second line of the file is a newline.\n");
-        printf("The next n lines contain n tab separated values for the matrix.");
-        printf("The next line of the file is a newline.\n");
-        printf("The next line of the file is a 1xn vector with tab separated values.\n");
-        printf("The next line of the file is a newline. (optional)\n");
-        printf("The final line of the file is the pre-computed solution. (optional)\n");
-        printf("Example: matrix4.txt:\n");
-        printf("4\n");
-        printf("\n");
-        printf("-0.6	-0.5	0.7	0.3\n");
-        printf("-0.3	-0.9	0.3	0.7\n");
-        printf("-0.4	-0.5	-0.3	-0.8\n");
-        printf("0.0	-0.1	0.2	0.9\n");
-        printf("\n");
-        printf("-0.85	-0.68	0.24	-0.53\n");
-        printf("\n");
-        printf("0.7	0.0	-0.4	-0.5\n");
-        exit(0);
-    }
+   int by = blockIdx.y;
+   int tx = threadIdx.x;
+   int ty = threadIdx.y;
 
-    cudaSetDevice(0);
+   int index = ( hid + 1 ) * 16 * by + ( hid + 1 ) * ty + tx + 1 + ( hid + 1 ) ;
 
-    PrintDeviceProperties();
+   int index_in = 16 * by + ty + 1;
+
+   __attribute__((shared)) float input_node[16];
+   __attribute__((shared)) float weight_matrix[16][16];
 
 
+   if ( tx == 0 )
+   input_node[ty] = input_cuda[index_in] ;
 
-    for(i=1;i<argc;i++) {
-      if (argv[i][0]=='-') {
-         flag = argv[i][1];
-          switch (flag) {
-            case 's':
-              i++;
-              Size = atoi(argv[i]);
-       printf("Create matrix internally in parse, size = %d \n", Size);
+   __syncthreads();
 
-       a = (float *) malloc(Size * Size * sizeof(float));
-       create_matrix(a, Size);
+   weight_matrix[ty][tx] = input_hidden_cuda[index];
 
-       b = (float *) malloc(Size * sizeof(float));
-       for (j =0; j< Size; j++)
-         b[j]=1.0;
+   __syncthreads();
 
-          m = (float *) malloc(Size * Size * sizeof(float));
-              break;
-            case 'f':
-              i++;
-       printf("Read file from %s \n", argv[i]);
-       InitProblemOnce(argv[i]);
-              break;
-            case 'q':
-          verbose = 1;
-              break;
-       }
-       }
-    }
+   weight_matrix[ty][tx] = weight_matrix[ty][tx] * input_node[ty];
 
+   __syncthreads();
 
+   for ( int i = 1 ; i <= __log2f(16) ; i++){
 
+    int power_two = __powf(2, i);
 
-    InitPerRun();
+    if( ty % power_two == 0 )
+    weight_matrix[ty][tx] = weight_matrix[ty][tx] + weight_matrix[ty + power_two/2][tx];
 
-    struct timeval time_start;
-    gettimeofday(&time_start, __null);
+    __syncthreads();
 
-
-    ForwardSub();
-
-
-    struct timeval time_end;
-    gettimeofday(&time_end, __null);
-    unsigned int time_total = (time_end.tv_sec * 1000000 + time_end.tv_usec) - (time_start.tv_sec * 1000000 + time_start.tv_usec);
-
-    if (verbose) {
-        printf("Matrix m is: \n");
-        PrintMat(m, Size, Size);
-
-        printf("Matrix a is: \n");
-        PrintMat(a, Size, Size);
-
-        printf("Array b is: \n");
-        PrintAry(b, Size);
-    }
-    BackSub();
-    if (verbose) {
-        printf("The final solution is: \n");
-        PrintAry(finalVec,Size);
-    }
-    printf("\nTime total (including memory transfers)\t%f sec\n", time_total * 1e-6);
-    printf("Time for CUDA kernels:\t%f sec\n",totalKernelTime * 1e-6);
-
-
-
-
-    free(m);
-    free(a);
-    free(b);
-
-
-
-
-}
-
-
-
-
-void PrintDeviceProperties(){
- cudaDeviceProp deviceProp;
- int nDevCount = 0;
-
- cudaGetDeviceCount( &nDevCount );
- printf( "Total Device found: %d", nDevCount );
- for (int nDeviceIdx = 0; nDeviceIdx < nDevCount; ++nDeviceIdx )
- {
-     memset( &deviceProp, 0, sizeof(deviceProp));
-     if( cudaSuccess == cudaGetDeviceProperties(&deviceProp, nDeviceIdx))
-         {
-    printf( "\nDevice Name \t\t - %s ", deviceProp.name );
-       printf( "\n**************************************");
-       printf( "\nTotal Global Memory\t\t\t - %lu KB", deviceProp.totalGlobalMem/1024 );
-       printf( "\nShared memory available per block \t - %lu KB", deviceProp.sharedMemPerBlock/1024 );
-       printf( "\nNumber of registers per thread block \t - %d", deviceProp.regsPerBlock );
-       printf( "\nWarp size in threads \t\t\t - %d", deviceProp.warpSize );
-       printf( "\nMemory Pitch \t\t\t\t - %zu bytes", deviceProp.memPitch );
-       printf( "\nMaximum threads per block \t\t - %d", deviceProp.maxThreadsPerBlock );
-       printf( "\nMaximum Thread Dimension (block) \t - %d %d %d", deviceProp.maxThreadsDim[0], deviceProp.maxThreadsDim[1], deviceProp.maxThreadsDim[2] );
-       printf( "\nMaximum Thread Dimension (grid) \t - %d %d %d", deviceProp.maxGridSize[0], deviceProp.maxGridSize[1], deviceProp.maxGridSize[2] );
-       printf( "\nTotal constant memory \t\t\t - %zu bytes", deviceProp.totalConstMem );
-       printf( "\nCUDA ver \t\t\t\t - %d.%d", deviceProp.major, deviceProp.minor );
-       printf( "\nClock rate \t\t\t\t - %d KHz", deviceProp.clockRate );
-       printf( "\nTexture Alignment \t\t\t - %zu bytes", deviceProp.textureAlignment );
-       printf( "\nDevice Overlap \t\t\t\t - %s", deviceProp. deviceOverlap?"Allowed":"Not Allowed" );
-       printf( "\nNumber of Multi processors \t\t - %d\n\n", deviceProp.multiProcessorCount );
    }
-     else
-         printf( "\n%s", cudaGetErrorString(cudaGetLastError()));
- }
-}
-# 267 "gaussian.cu"
-void InitProblemOnce(char *filename)
-{
 
 
 
+   input_hidden_cuda[index] = weight_matrix[ty][tx];
+# 72 "backprop_cuda_kernel.cu"
+   __syncthreads();
 
- printf("The file name is: %s\n", filename);
+   if ( tx == 0 ) {
+    hidden_partial_sum[by * hid + ty] = weight_matrix[tx][ty];
+   }
 
- fp = fopen(filename, "r");
-
- fscanf(fp, "%d", &Size);
-
- a = (float *) malloc(Size * Size * sizeof(float));
-
- InitMat(a, Size, Size);
- printf("The input matrix a is:\n");
- PrintMat(a, Size, Size);
- b = (float *) malloc(Size * sizeof(float));
-
- InitAry(b, Size);
- printf("The input array b is:\n");
- PrintAry(b, Size);
-
-  m = (float *) malloc(Size * Size * sizeof(float));
 }
 
 
-
-
-
-
-void InitPerRun()
-{
- int i;
- for (i=0; i<Size*Size; i++)
-   *(m+i) = 0.0;
-}
-# 313 "gaussian.cu"
-__attribute__((global)) void Fan1(float *m_cuda, float *a_cuda, int Size, int t)
+__attribute__((global)) void bpnn_adjust_weights_cuda(float * delta,
+           int hid,
+           float * ly,
+           int in,
+           float * w,
+           float * oldw)
 {
 
 
+   int by = blockIdx.y;
 
+   int tx = threadIdx.x;
+   int ty = threadIdx.y;
 
- if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) return;
- *(m_cuda+Size*(blockDim.x*blockIdx.x+threadIdx.x+t+1)+t) = *(a_cuda+Size*(blockDim.x*blockIdx.x+threadIdx.x+t+1)+t) / *(a_cuda+Size*t+t);
-}
+   int index = ( hid + 1 ) * 16 * by + ( hid + 1 ) * ty + tx + 1 + ( hid + 1 ) ;
+   int index_y = 16 * by + ty + 1;
+   int index_x = tx + 1;
 
 
 
+   w[index] += ((0.3 * delta[index_x] * ly[index_y]) + (0.3 * oldw[index]));
+   oldw[index] = ((0.3 * delta[index_x] * ly[index_y]) + (0.3 * oldw[index]));
 
 
+   __syncthreads();
 
-__attribute__((global)) void Fan2(float *m_cuda, float *a_cuda, float *b_cuda,int Size, int j1, int t)
-{
- if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) return;
- if(threadIdx.y + blockIdx.y * blockDim.y >= Size-t) return;
+   if (ty == 0 && by ==0){
+   w[index_x] += ((0.3 * delta[index_x]) + (0.3 * oldw[index_x]));
+   oldw[index_x] = ((0.3 * delta[index_x]) + (0.3 * oldw[index_x]));
+   }
 
- int xidx = blockIdx.x * blockDim.x + threadIdx.x;
- int yidx = blockIdx.y * blockDim.y + threadIdx.y;
 
-
- a_cuda[Size*(xidx+1+t)+(yidx+t)] -= m_cuda[Size*(xidx+1+t)+t] * a_cuda[Size*t+(yidx+t)];
-
- if(yidx == 0){
-
-
-  b_cuda[xidx+1+t] -= m_cuda[Size*(xidx+1+t)+(yidx+t)] * b_cuda[t];
- }
-}
-
-
-
-
-
-
-void ForwardSub()
-{
- int t;
-    float *m_cuda,*a_cuda,*b_cuda;
-
-   int A = 1;
-    int B = 2;
-    int C = 3;
-    int D = 4;
-    int E = 5;
-  int F = 6;
-
-  printf("blockIdx.x: %d, threadIdx.x: %d, blockIdx.y: %d, threadIdx.y: %d, blockDim.x: %d, blockDim.y: %d\n", A , B, C, D, E, F);
-
-
-
-
- cudaMalloc((void **) &m_cuda, Size * Size * sizeof(float));
-
- cudaMalloc((void **) &a_cuda, Size * Size * sizeof(float));
-
- cudaMalloc((void **) &b_cuda, Size * sizeof(float));
-
-
- cudaMemcpy(m_cuda, m, Size * Size * sizeof(float),cudaMemcpyHostToDevice );
- cudaMemcpy(a_cuda, a, Size * Size * sizeof(float),cudaMemcpyHostToDevice );
- cudaMemcpy(b_cuda, b, Size * sizeof(float),cudaMemcpyHostToDevice );
-
-
- for(int i = 0; i<Size * Size; i++) {
-  printf("M val: %f at %d\n", *(m_cuda+i), i);
- }
- for(int i = 0; i<Size * Size; i++) {
-  printf("A val: %f at %d\n", *(a_cuda+i), i);
-
- }
- for(int i = 0; i<Size; i++) {
-  printf("B val: %f at %d\n", *(b_cuda+i), i);
-
- }
- int block_size,grid_size;
-
- block_size = 512;
- grid_size = (Size/block_size) + (!(Size%block_size)? 0:1);
- printf("1d grid size: %d\n",grid_size);
-
-
- dim3 dimBlock(block_size);
- dim3 dimGrid(grid_size);
-
-
- int blockSize2d, gridSize2d;
- blockSize2d = 1;
- gridSize2d = (Size/blockSize2d) + (!(Size%blockSize2d?0:1));
-
- dim3 dimBlockXY(blockSize2d,blockSize2d);
-
- printf(" ######### BlockXY: %d \n", blockSize2d);
- dim3 dimGridXY(gridSize2d,gridSize2d);
-
-
-
-
-
-
-    struct timeval time_start;
-    gettimeofday(&time_start, __null);
- for (t=0; t<(Size-1); t++) {
-
-
-
-
-
-
-  Fan1<<<dimGrid,dimBlock>>>(m_cuda,a_cuda,Size,t);
-  cudaDeviceSynchronize();
-  Fan2<<<dimGridXY,dimBlockXY>>>(m_cuda,a_cuda,b_cuda,Size,Size-t,t);
-  cudaDeviceSynchronize();
-  checkCUDAError("Fan2");
- }
-
- struct timeval time_end;
-    gettimeofday(&time_end, __null);
-    totalKernelTime = (time_end.tv_sec * 1000000 + time_end.tv_usec) - (time_start.tv_sec * 1000000 + time_start.tv_usec);
-
-
-
-
-
-
-
- cudaMemcpy(m, m_cuda, Size * Size * sizeof(float),cudaMemcpyDeviceToHost );
- cudaMemcpy(a, a_cuda, Size * Size * sizeof(float),cudaMemcpyDeviceToHost );
- cudaMemcpy(b, b_cuda, Size * sizeof(float),cudaMemcpyDeviceToHost );
- cudaFree(m_cuda);
- cudaFree(a_cuda);
- cudaFree(b_cuda);
-}
-
-
-
-
-
-
-void BackSub()
-{
-
- finalVec = (float *) malloc(Size * sizeof(float));
-
- int i,j;
- for(i=0;i<Size;i++){
-  finalVec[Size-i-1]=b[Size-i-1];
-  for(j=0;j<i;j++)
-  {
-   finalVec[Size-i-1]-=*(a+Size*(Size-i-1)+(Size-j-1)) * finalVec[Size-j-1];
-  }
-  finalVec[Size-i-1]=finalVec[Size-i-1]/ *(a+Size*(Size-i-1)+(Size-i-1));
- }
-}
-
-void InitMat(float *ary, int nrow, int ncol)
-{
- int i, j;
-
- for (i=0; i<nrow; i++) {
-  for (j=0; j<ncol; j++) {
-   fscanf(fp, "%f", ary+Size*i+j);
-  }
- }
-}
-
-
-
-
-
-void PrintMat(float *ary, int nrow, int ncol)
-{
- int i, j;
-
- for (i=0; i<nrow; i++) {
-  for (j=0; j<ncol; j++) {
-   printf("%8.2f ", *(ary+Size*i+j));
-  }
-  printf("\n");
- }
- printf("\n");
-}
-
-
-
-
-
-
-void InitAry(float *ary, int ary_size)
-{
- int i;
-
- for (i=0; i<ary_size; i++) {
-  fscanf(fp, "%f", &ary[i]);
- }
-}
-
-
-
-
-
-void PrintAry(float *ary, int ary_size)
-{
- int i;
- for (i=0; i<ary_size; i++) {
-  printf("%.2f ", ary[i]);
- }
- printf("\n\n");
-}
-void checkCUDAError(const char *msg)
-{
-    cudaError_t err = cudaGetLastError();
-    if( cudaSuccess != err)
-    {
-        fprintf(stderr, "Cuda error: %s: %s.\n", msg,
-                                  cudaGetErrorString( err) );
-        exit(1);
-    }
 }

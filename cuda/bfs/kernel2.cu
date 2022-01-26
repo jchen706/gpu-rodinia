@@ -17,6 +17,8 @@ The CUDA Kernel for Applying BFS on a loaded Graph. Created By Pawan Harish
 **********************************************************************************/
 #ifndef _KERNEL2_H_
 #define _KERNEL2_H_
+#define MAX_THREADS_PER_BLOCK 512
+
 
 __global__ void
 Kernel2( bool* g_graph_mask, bool *g_updating_graph_mask, bool* g_graph_visited, bool *g_over, int no_of_nodes)

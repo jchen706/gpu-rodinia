@@ -20338,16 +20338,25 @@ typedef struct {
 
 
 
-void bpnn_initialize();
 
-BPNN *bpnn_create();
-void bpnn_free();
 
-void bpnn_train();
-void bpnn_feedforward();
 
-void bpnn_save();
-BPNN *bpnn_read();
+extern "C" {
+void bpnn_train_cuda(BPNN *net, float *eo, float *eh);
+
+void bpnn_initialize(int seed);
+BPNN *bpnn_create(int n_in, int n_hidden, int n_out);
+void bpnn_free(BPNN *net);
+
+void bpnn_train(BPNN *net, float *eo, float *eh);
+
+
+void bpnn_feedforward(BPNN *net);
+
+void bpnn_save(BPNN* net, char *filename);
+BPNN *bpnn_read(char * filename);
+void load(BPNN *net);
+}
 # 8 "./backprop_cuda_kernel.cu" 2
 # 1 "/usr/lib/gcc/x86_64-linux-gnu/7.5.0/../../../../include/c++/7.5.0/math.h" 1 3
 # 9 "./backprop_cuda_kernel.cu" 2
@@ -20501,6 +20510,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   out = net->output_n;
 
 
+  cudaSetDevice(0);
   int m = 0;
   float *input_hidden_cuda;
   float *input_cuda;
@@ -20533,7 +20543,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   cudaMalloc((void**) &output_hidden_cuda, (hid + 1) * sizeof(float));
   cudaMalloc((void**) &input_hidden_cuda, (in + 1) * (hid + 1) * sizeof(float));
   cudaMalloc((void**) &hidden_partial_sum, num_blocks * 16 * sizeof(float));
-# 114 "backprop_cuda.cu"
+# 115 "backprop_cuda.cu"
   printf("Performing GPU computation\n");
 
 
@@ -20550,7 +20560,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
              in,
              hid);
 
-  cudaThreadSynchronize();
+  cudaDeviceSynchronize();
 
   cudaError_t error = cudaGetLastError();
  if (error != cudaSuccess) {
@@ -20574,7 +20584,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   bpnn_output_error(net->output_delta, net->target, net->output_units, out, &out_err);
   bpnn_hidden_error(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err);
   bpnn_adjust_weights(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights);
-# 164 "backprop_cuda.cu"
+# 165 "backprop_cuda.cu"
   cudaMalloc((void**) &hidden_delta_cuda, (hid + 1) * sizeof(float));
   cudaMalloc((void**) &input_prev_weights_cuda, (in + 1) * (hid + 1) * sizeof(float));
 

@@ -4,8 +4,6 @@
 # 384 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "/data/jchen/llvminstall/lib/clang/10.0.1/include/__clang_cuda_runtime_wrapper.h" 1 3
-# 2 "<built-in>" 2
 # 1 "backprop.cpp" 2
 # 11 "backprop.cpp"
 # 1 "/usr/include/stdio.h" 1 3 4
@@ -8944,7 +8942,7 @@ void bpnn_randomize_weights(float **w,int m,int n)
 
   for (i = 0; i <= m; i++) {
     for (j = 0; j <= n; j++) {
-     w[i][j] = (float) rand()/2147483647;
+     w[i][j] = (float) (rand()/2147483647);
 
     }
   }

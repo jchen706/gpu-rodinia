@@ -66,6 +66,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
   out = net->output_n;   
    
 #ifdef GPU  
+  cudaSetDevice(0);
   int m = 0;
   float *input_hidden_cuda;
   float *input_cuda;
@@ -127,7 +128,7 @@ void bpnn_train_cuda(BPNN *net, float *eo, float *eh)
 											  in,
 											  hid);
  
-  cudaThreadSynchronize();
+  cudaDeviceSynchronize();
   
   cudaError_t error = cudaGetLastError();
 	if (error != cudaSuccess) {

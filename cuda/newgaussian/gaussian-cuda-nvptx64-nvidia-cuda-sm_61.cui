@@ -20225,7 +20225,7 @@ create_matrix(float *m, int size){
 
 int main(int argc, char *argv[])
 {
-  printf("WG size of kernel 1 = %d, WG size of kernel 2= %d X %d\n", 512, 4, 4);
+  printf("WG size of kernel 1 = %d, WG size of kernel 2= %d X %d\n", 512, 1, 1);
     int verbose = 1;
     int i, j;
     char flag;
@@ -20413,9 +20413,9 @@ void InitPerRun()
 # 313 "gaussian.cu"
 __attribute__((global)) void Fan1(float *m_cuda, float *a_cuda, int Size, int t)
 {
- if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) {
-   printf("blockIDx.x: %d, threadIdx.x: %d, Size: %d, t:%d, Size-1-t: %d\n",blockIdx.x,threadIdx.x,Size,t,Size-1-t);
- }
+
+
+
 
  if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) return;
  *(m_cuda+Size*(blockDim.x*blockIdx.x+threadIdx.x+t+1)+t) = *(a_cuda+Size*(blockDim.x*blockIdx.x+threadIdx.x+t+1)+t) / *(a_cuda+Size*t+t);
@@ -20433,7 +20433,7 @@ __attribute__((global)) void Fan2(float *m_cuda, float *a_cuda, float *b_cuda,in
 
  int xidx = blockIdx.x * blockDim.x + threadIdx.x;
  int yidx = blockIdx.y * blockDim.y + threadIdx.y;
- printf("blockIdx.x: %d, threadIdx.x: %d, blockIdx.y: %d, threadIdx.y: %d, blockDim.x: %d, blockDim.y: %d\n",blockIdx.x,threadIdx.x,blockIdx.y,threadIdx.y,blockDim.x,blockDim.y);
+
 
  a_cuda[Size*(xidx+1+t)+(yidx+t)] -= m_cuda[Size*(xidx+1+t)+t] * a_cuda[Size*t+(yidx+t)];
 
@@ -20501,10 +20501,12 @@ void ForwardSub()
 
 
  int blockSize2d, gridSize2d;
- blockSize2d = 4;
+ blockSize2d = 1;
  gridSize2d = (Size/blockSize2d) + (!(Size%blockSize2d?0:1));
 
  dim3 dimBlockXY(blockSize2d,blockSize2d);
+
+ printf(" ######### BlockXY: %d \n", blockSize2d);
  dim3 dimGridXY(gridSize2d,gridSize2d);
 
 
