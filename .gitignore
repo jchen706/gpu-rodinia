@@ -5,4 +5,9 @@ data/*
 *.swp
 *.gch
 *.out
-*.sh
+*.ll
+*.bc 
+*.cui
+*.s
+*.fatbin
+*.ii

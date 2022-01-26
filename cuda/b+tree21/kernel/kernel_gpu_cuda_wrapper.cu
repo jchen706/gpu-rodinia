@@ -1,6 +1,3 @@
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 //========================================================================================================================================================================================================200
 //	DEFINE/INCLUDE
@@ -212,17 +209,30 @@ kernel_gpu_cuda_wrapper(record *records,
 	// findK kernel
 	//======================================================================================================================================================150
 
-	findK<<<numBlocks, threadsPerBlock>>>(	maxheight,
+	void* args[] = {&maxheight, &knodesD,
+												&knodes_elem,
+												&recordsD,
 
-											knodesD,
-											knodes_elem,
 
-											recordsD,
+												&currKnodeD,
+												&offsetD,
+												&keysD,
+												&ansD,
+											};
+	dim3 grid(numBlocks);
+	dim3 block(threadsPerBlock);
+	cudaLaunchKernel((void*)&findK, grid, block, args, 0, NULL);
+	// findK<<<numBlocks, threadsPerBlock>>>(	maxheight,
 
-											currKnodeD,
-											offsetD,
-											keysD,
-											ansD);
+	// 										knodesD,
+	// 										knodes_elem,
+
+	// 										recordsD,
+
+	// 										currKnodeD,
+	// 										offsetD,
+	// 										keysD,
+	// 										ansD);
 	cudaDeviceSynchronize();
 	checkCUDAError("findK");
 
@@ -287,6 +297,3 @@ kernel_gpu_cuda_wrapper(record *records,
 //	END
 //========================================================================================================================================================================================================200
 
-#ifdef __cplusplus
-}
-#endif
