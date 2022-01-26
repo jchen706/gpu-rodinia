@@ -16,13 +16,13 @@ clang++ main.c ./kernel/kernel_gpu_cuda_wrapper.cu  ./kernel/kernel_gpu_cuda_wra
 
 
 
-# llc --relocation-model=pic --filetype=obj  kernel_1.bc
-# llc --relocation-model=pic --filetype=obj  host_1.bc
-# llc --relocation-model=pic --filetype=obj  kernel_2.bc
-# llc --relocation-model=pic --filetype=obj  host_2.bc
+llc --relocation-model=pic --filetype=obj  kernel_1.bc
+llc --relocation-model=pic --filetype=obj  host_1.bc
+llc --relocation-model=pic --filetype=obj  kernel_2.bc
+llc --relocation-model=pic --filetype=obj  host_2.bc
 
 
-# g++ -g -Wall -L/data/jchen/open_source_template/build/runtime  -L/data/jchen/open_source_template/build/runtime/threadPool -o demo -fPIC -no-pie host_1.o kernel_1.o host_2.o kernel_2.o main.o timer.o num.o cuda.o -lc -lx86Runtime -lthreadPool -lpthread
+g++ -g -Wall -L/data/jchen/open_source_template/build/runtime  -L/data/jchen/open_source_template/build/runtime/threadPool -o demo -fPIC -no-pie host_1.o kernel_1.o host_2.o kernel_2.o main.o timer.o num.o cuda.o -lc -lx86Runtime -lthreadPool -lpthread
 
 
 
