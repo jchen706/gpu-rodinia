@@ -185,6 +185,7 @@ int main(int argc, char** argv)
     tempIn = (float*)calloc(size,sizeof(float));
     tempOut = (float*)calloc(size, sizeof(float));
     float* answer = (float*)calloc(size, sizeof(float));
+    cudaSetDevice(0);
 
     readinput(powerIn,numRows, numCols, layers,pfile);
     readinput(tempIn, numRows, numCols, layers, tfile);

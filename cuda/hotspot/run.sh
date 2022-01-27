@@ -15,4 +15,4 @@ llc --relocation-model=pic --filetype=obj  kernel.bc
 llc --relocation-model=pic --filetype=obj  host.bc
 
 
-g++ -g -Wall -L/data/jchen/open_source_template/build/runtime  -L/data/jchen/open_source_template/build/runtime/threadPool -o demo -fPIC -no-pie host.o kernel.o runtime_kernel_attr.o gen_input.o -lc -lx86Runtime -lthreadPool -lpthread
+g++ -g -Wall -L/data/jchen/open_source_template/build/runtime  -L/data/jchen/open_source_template/build/runtime/threadPool -o demo -fPIC -no-pie host.o kernel.o -lc -lx86Runtime -lthreadPool -lpthread

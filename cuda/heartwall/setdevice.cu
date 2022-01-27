@@ -27,7 +27,7 @@ void setdevice(void){
 				max_device = device;
 			}
 		}
-		cudaSetDevice(max_device);
+		cudaSetDevice(0);
 	}
 
 }
