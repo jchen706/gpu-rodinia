@@ -75,6 +75,7 @@ main ( int argc, char *argv[] )
   const char *input_file = NULL;
   float *m, *d_m, *mm;
   stopwatch sw;
+  cudaSetDevice(0);
 
   while ((opt = getopt_long(argc, argv, "::vs:i:", 
                             long_options, &option_index)) != -1 ) {
@@ -161,6 +162,7 @@ main ( int argc, char *argv[] )
   kernel_time += tv.tv_sec * 1000.0 + (float) tv.tv_usec / 1000.0;
 #endif
 
+
   cudaMemcpy(m, d_m, matrix_dim*matrix_dim*sizeof(float), 
 	     cudaMemcpyDeviceToHost);
 
@@ -171,13 +173,14 @@ main ( int argc, char *argv[] )
   cudaFree(d_m);
 
 
-  if (do_verify){
+  // if (do_verify){
     printf("After LUD\n");
-    // print_matrix(m, matrix_dim);
+    print_matrix(m, matrix_dim);
     printf(">>>Verify<<<<\n");
     lud_verify(mm, m, matrix_dim); 
+    printf(">>>After Lud Verify<<<<\n");
     free(mm);
-  }
+  // }
 
   free(m);
 

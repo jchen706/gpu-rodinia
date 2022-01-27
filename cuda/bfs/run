@@ -1,1 +1,1 @@
-./bfs.out ../../data/bfs/graph1M.txt
+./a.out ../../data/bfs/graph1M.txt
