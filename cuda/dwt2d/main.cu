@@ -325,6 +325,7 @@ int main(int argc, char **argv)
                device, 0, devCount -1);
         return -1;
     }
+    cudaSetDevice(0);
     cudaDeviceProp devProp;                                          
     cudaGetDeviceProperties(&devProp, device);  
     cudaCheckError("Get device properties");
@@ -333,7 +334,7 @@ int main(int argc, char **argv)
         return -1;
     }                                                                   
     printf("Using device %d: %s\n", device, devProp.name);
-    cudaSetDevice(device);
+    // cudaSetDevice(device);
     cudaCheckError("Set selected device");
 
     struct dwt *d;

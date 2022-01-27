@@ -128,13 +128,21 @@ _Z9readinputPfiiPc:                     # @_Z9readinputPfiiPc
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$320, %rsp              # imm = 0x140
+	subq	$336, %rsp              # imm = 0x150
 	movq	%rdi, -8(%rbp)
 	movl	%esi, -12(%rbp)
 	movl	%edx, -16(%rbp)
 	movq	%rcx, -24(%rbp)
 	movq	-24(%rbp), %rdi
-	movabsq	$.L.str.4, %rsi
+	movb	$0, %al
+	callq	printf
+	movabsq	$.L.str.4, %rdi
+	movl	%eax, -312(%rbp)        # 4-byte Spill
+	movb	$0, %al
+	callq	printf
+	movq	-24(%rbp), %rdi
+	movabsq	$.L.str.5, %rsi
+	movl	%eax, -316(%rbp)        # 4-byte Spill
 	callq	fopen
 	movq	%rax, -40(%rbp)
 	cmpq	$0, %rax
@@ -156,7 +164,7 @@ _Z9readinputPfiiPc:                     # @_Z9readinputPfiiPc
 # %bb.4:                                # %for.body
                                         #   in Loop: Header=BB2_3 Depth=1
 	movl	$0, -32(%rbp)
-.LBB2_5:                                # %for.cond3
+.LBB2_5:                                # %for.cond5
                                         #   Parent Loop BB2_3 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
 	movl	-32(%rbp), %eax
@@ -164,35 +172,35 @@ _Z9readinputPfiiPc:                     # @_Z9readinputPfiiPc
 	subl	$1, %ecx
 	cmpl	%ecx, %eax
 	jg	.LBB2_12
-# %bb.6:                                # %for.body6
+# %bb.6:                                # %for.body8
                                         #   in Loop: Header=BB2_5 Depth=2
 	leaq	-304(%rbp), %rdi
 	movq	-40(%rbp), %rdx
 	movl	$256, %esi              # imm = 0x100
 	callq	fgets
 	movq	-40(%rbp), %rdi
-	movq	%rax, -320(%rbp)        # 8-byte Spill
+	movq	%rax, -328(%rbp)        # 8-byte Spill
 	callq	feof
 	cmpl	$0, %eax
 	je	.LBB2_8
-# %bb.7:                                # %if.then9
+# %bb.7:                                # %if.then11
                                         #   in Loop: Header=BB2_5 Depth=2
-	movabsq	$.L.str.5, %rdi
+	movabsq	$.L.str.6, %rdi
 	callq	_Z5fatalPc
-.LBB2_8:                                # %if.end10
+.LBB2_8:                                # %if.end12
                                         #   in Loop: Header=BB2_5 Depth=2
 	leaq	-304(%rbp), %rdi
-	movabsq	$.L.str.6, %rsi
+	movabsq	$.L.str.7, %rsi
 	leaq	-308(%rbp), %rdx
 	movb	$0, %al
 	callq	sscanf
 	cmpl	$1, %eax
 	je	.LBB2_10
-# %bb.9:                                # %if.then14
+# %bb.9:                                # %if.then16
                                         #   in Loop: Header=BB2_5 Depth=2
-	movabsq	$.L.str.7, %rdi
+	movabsq	$.L.str.8, %rdi
 	callq	_Z5fatalPc
-.LBB2_10:                               # %if.end15
+.LBB2_10:                               # %if.end17
                                         #   in Loop: Header=BB2_5 Depth=2
 	movss	-308(%rbp), %xmm0       # xmm0 = mem[0],zero,zero,zero
 	movq	-8(%rbp), %rax
@@ -210,16 +218,16 @@ _Z9readinputPfiiPc:                     # @_Z9readinputPfiiPc
 .LBB2_12:                               # %for.end
                                         #   in Loop: Header=BB2_3 Depth=1
 	jmp	.LBB2_13
-.LBB2_13:                               # %for.inc16
+.LBB2_13:                               # %for.inc18
                                         #   in Loop: Header=BB2_3 Depth=1
 	movl	-28(%rbp), %eax
 	addl	$1, %eax
 	movl	%eax, -28(%rbp)
 	jmp	.LBB2_3
-.LBB2_14:                               # %for.end18
+.LBB2_14:                               # %for.end20
 	movq	-40(%rbp), %rdi
 	callq	fclose
-	addq	$320, %rsp              # imm = 0x140
+	addq	$336, %rsp              # imm = 0x150
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
@@ -613,36 +621,36 @@ _Z5usageiPPc:                           # @_Z5usageiPPc
 	movq	stderr, %rdi
 	movq	-16(%rbp), %rax
 	movq	(%rax), %rdx
-	movabsq	$.L.str.8, %rsi
-	movb	$0, %al
-	callq	fprintf
-	movq	stderr, %rdi
 	movabsq	$.L.str.9, %rsi
-	movl	%eax, -20(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
 	movq	stderr, %rdi
 	movabsq	$.L.str.10, %rsi
-	movl	%eax, -24(%rbp)         # 4-byte Spill
+	movl	%eax, -20(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
 	movq	stderr, %rdi
 	movabsq	$.L.str.11, %rsi
-	movl	%eax, -28(%rbp)         # 4-byte Spill
+	movl	%eax, -24(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
 	movq	stderr, %rdi
 	movabsq	$.L.str.12, %rsi
-	movl	%eax, -32(%rbp)         # 4-byte Spill
+	movl	%eax, -28(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
 	movq	stderr, %rdi
 	movabsq	$.L.str.13, %rsi
-	movl	%eax, -36(%rbp)         # 4-byte Spill
+	movl	%eax, -32(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
 	movq	stderr, %rdi
 	movabsq	$.L.str.14, %rsi
+	movl	%eax, -36(%rbp)         # 4-byte Spill
+	movb	$0, %al
+	callq	fprintf
+	movq	stderr, %rdi
+	movabsq	$.L.str.15, %rsi
 	movl	%eax, -40(%rbp)         # 4-byte Spill
 	movb	$0, %al
 	callq	fprintf
@@ -668,7 +676,7 @@ main:                                   # @main
 	movl	$0, -4(%rbp)
 	movl	%edi, -8(%rbp)
 	movq	%rsi, -16(%rbp)
-	movabsq	$.L.str.15, %rdi
+	movabsq	$.L.str.16, %rdi
 	movl	$16, %eax
 	movl	%eax, %esi
 	movl	%eax, %edx
@@ -839,7 +847,7 @@ _Z3runiPPc:                             # @_Z3runiPPc
 	cmpq	$0, -80(%rbp)
 	jne	.LBB8_11
 .LBB8_10:                               # %if.then42
-	movabsq	$.L.str.16, %rdi
+	movabsq	$.L.str.17, %rdi
 	callq	_Z5fatalPc
 .LBB8_11:                               # %if.end43
 	movl	-112(%rbp), %esi
@@ -851,7 +859,7 @@ _Z3runiPPc:                             # @_Z3runiPPc
 	movl	-136(%rbp), %edi
 	movl	-124(%rbp), %r10d
 	movl	-128(%rbp), %r11d
-	movabsq	$.L.str.17, %rbx
+	movabsq	$.L.str.18, %rbx
 	movl	%edi, -192(%rbp)        # 4-byte Spill
 	movq	%rbx, %rdi
 	movl	%eax, (%rsp)
@@ -912,7 +920,7 @@ _Z3runiPPc:                             # @_Z3runiPPc
 	movl	$1, %ecx
 	movl	%eax, -244(%rbp)        # 4-byte Spill
 	callq	cudaMemcpy
-	movabsq	$.L.str.18, %rdi
+	movabsq	$.L.str.19, %rdi
 	movl	%eax, -248(%rbp)        # 4-byte Spill
 	movb	$0, %al
 	callq	printf
@@ -933,7 +941,7 @@ _Z3runiPPc:                             # @_Z3runiPPc
 	movl	%eax, -252(%rbp)        # 4-byte Spill
 	callq	_Z17compute_tran_tempPfPS_iiiiiiii
 	movl	%eax, -172(%rbp)
-	movabsq	$.L.str.19, %rdi
+	movabsq	$.L.str.20, %rdi
 	movb	$0, %al
 	callq	printf
 	movq	-80(%rbp), %rsi
@@ -1103,83 +1111,88 @@ amb_temp:
 
 	.type	.L.str.4,@object        # @.str.4
 .L.str.4:
-	.asciz	"r"
+	.asciz	"\n"
 	.size	.L.str.4, 2
 
 	.type	.L.str.5,@object        # @.str.5
 .L.str.5:
-	.asciz	"not enough lines in file"
-	.size	.L.str.5, 25
+	.asciz	"r"
+	.size	.L.str.5, 2
 
 	.type	.L.str.6,@object        # @.str.6
 .L.str.6:
-	.asciz	"%f"
-	.size	.L.str.6, 3
+	.asciz	"not enough lines in file"
+	.size	.L.str.6, 25
 
 	.type	.L.str.7,@object        # @.str.7
 .L.str.7:
-	.asciz	"invalid file format"
-	.size	.L.str.7, 20
+	.asciz	"%f"
+	.size	.L.str.7, 3
 
 	.type	.L.str.8,@object        # @.str.8
 .L.str.8:
-	.asciz	"Usage: %s <grid_rows/grid_cols> <pyramid_height> <sim_time> <temp_file> <power_file> <output_file>\n"
-	.size	.L.str.8, 100
+	.asciz	"invalid file format"
+	.size	.L.str.8, 20
 
 	.type	.L.str.9,@object        # @.str.9
 .L.str.9:
-	.asciz	"\t<grid_rows/grid_cols>  - number of rows/cols in the grid (positive integer)\n"
-	.size	.L.str.9, 78
+	.asciz	"Usage: %s <grid_rows/grid_cols> <pyramid_height> <sim_time> <temp_file> <power_file> <output_file>\n"
+	.size	.L.str.9, 100
 
 	.type	.L.str.10,@object       # @.str.10
 .L.str.10:
-	.asciz	"\t<pyramid_height> - pyramid heigh(positive integer)\n"
-	.size	.L.str.10, 53
+	.asciz	"\t<grid_rows/grid_cols>  - number of rows/cols in the grid (positive integer)\n"
+	.size	.L.str.10, 78
 
 	.type	.L.str.11,@object       # @.str.11
 .L.str.11:
-	.asciz	"\t<sim_time>   - number of iterations\n"
-	.size	.L.str.11, 38
+	.asciz	"\t<pyramid_height> - pyramid heigh(positive integer)\n"
+	.size	.L.str.11, 53
 
 	.type	.L.str.12,@object       # @.str.12
 .L.str.12:
-	.asciz	"\t<temp_file>  - name of the file containing the initial temperature values of each cell\n"
-	.size	.L.str.12, 89
+	.asciz	"\t<sim_time>   - number of iterations\n"
+	.size	.L.str.12, 38
 
 	.type	.L.str.13,@object       # @.str.13
 .L.str.13:
-	.asciz	"\t<power_file> - name of the file containing the dissipated power values of each cell\n"
-	.size	.L.str.13, 86
+	.asciz	"\t<temp_file>  - name of the file containing the initial temperature values of each cell\n"
+	.size	.L.str.13, 89
 
 	.type	.L.str.14,@object       # @.str.14
 .L.str.14:
-	.asciz	"\t<output_file> - name of the output file\n"
-	.size	.L.str.14, 42
+	.asciz	"\t<power_file> - name of the file containing the dissipated power values of each cell\n"
+	.size	.L.str.14, 86
 
 	.type	.L.str.15,@object       # @.str.15
 .L.str.15:
-	.asciz	"WG size of kernel = %d X %d\n"
-	.size	.L.str.15, 29
+	.asciz	"\t<output_file> - name of the output file\n"
+	.size	.L.str.15, 42
 
 	.type	.L.str.16,@object       # @.str.16
 .L.str.16:
-	.asciz	"unable to allocate memory"
-	.size	.L.str.16, 26
+	.asciz	"WG size of kernel = %d X %d\n"
+	.size	.L.str.16, 29
 
 	.type	.L.str.17,@object       # @.str.17
 .L.str.17:
-	.asciz	"pyramidHeight: %d\ngridSize: [%d, %d]\nborder:[%d, %d]\nblockGrid:[%d, %d]\ntargetBlock:[%d, %d]\n"
-	.size	.L.str.17, 94
+	.asciz	"unable to allocate memory"
+	.size	.L.str.17, 26
 
 	.type	.L.str.18,@object       # @.str.18
 .L.str.18:
-	.asciz	"Start computing the transient temperature\n"
-	.size	.L.str.18, 43
+	.asciz	"pyramidHeight: %d\ngridSize: [%d, %d]\nborder:[%d, %d]\nblockGrid:[%d, %d]\ntargetBlock:[%d, %d]\n"
+	.size	.L.str.18, 94
 
 	.type	.L.str.19,@object       # @.str.19
 .L.str.19:
+	.asciz	"Start computing the transient temperature\n"
+	.size	.L.str.19, 43
+
+	.type	.L.str.20,@object       # @.str.20
+.L.str.20:
 	.asciz	"Ending simulation\n"
-	.size	.L.str.19, 19
+	.size	.L.str.20, 19
 
 	.type	.L__unnamed_1,@object   # @0
 .L__unnamed_1:

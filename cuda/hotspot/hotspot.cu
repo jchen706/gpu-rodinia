@@ -76,6 +76,8 @@ void readinput(float *vect, int grid_rows, int grid_cols, char *file){
 	FILE *fp;
 	char str[STR_SIZE];
 	float val;
+        printf(file);
+        printf("\n");
 
 	if( (fp  = fopen(file, "r" )) ==0 )
             printf( "The file was not opened\n" );
@@ -286,10 +288,12 @@ void run(int argc, char** argv)
 	if((grid_rows = atoi(argv[1]))<=0||
 	   (grid_cols = atoi(argv[1]))<=0||
        (pyramid_height = atoi(argv[2]))<=0||
-       (total_iterations = atoi(argv[3]))<=0)
-		usage(argc, argv);
+       (total_iterations = atoi(argv[3]))<=0) {
+                usage(argc, argv);
+
+       }
 		
-	tfile=argv[4];
+    tfile=argv[4];
     pfile=argv[5];
     ofile=argv[6];
 	

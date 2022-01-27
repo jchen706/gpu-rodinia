@@ -1,6 +1,6 @@
 clang++ hotspot.cu -o hotspot --cuda-path=/usr/local/cuda-10.1 --cuda-gpu-arch=sm_61 -L/usr/local/cuda-10.1/lib64 -lcudart_static -ldl -lrt -pthread -save-temps -v
 
-/data/jchen/open_source_template/build/compilation/kernelTranslator hotspot-cuda-nvptx64-nvidia-cuda-sm_61.bc kernel.bc 1 1 1 512 1 1
+/data/jchen/open_source_template/build/compilation/kernelTranslator hotspot-cuda-nvptx64-nvidia-cuda-sm_61.bc kernel.bc
 /data/jchen/open_source_template/build/compilation/hostTranslator hotspot-host-x86_64-unknown-linux-gnu.bc host.bc
 
 
@@ -13,7 +13,6 @@ clang++ hotspot.cu -o hotspot --cuda-path=/usr/local/cuda-10.1 --cuda-gpu-arch=s
 
 llc --relocation-model=pic --filetype=obj  kernel.bc
 llc --relocation-model=pic --filetype=obj  host.bc
-llc --relocation-model=pic --filetype=obj  runtime_kernel_attr.bc
-llc --relocation-model=pic --filetype=obj  gen_input.bc
+
 
 g++ -g -Wall -L/data/jchen/open_source_template/build/runtime  -L/data/jchen/open_source_template/build/runtime/threadPool -o demo -fPIC -no-pie host.o kernel.o runtime_kernel_attr.o gen_input.o -lc -lx86Runtime -lthreadPool -lpthread
