@@ -33,6 +33,7 @@ needle_cuda_shared_1(  int* referrence,
 {
   int bx = blockIdx.x;
   int tx = threadIdx.x;
+  
 
   int b_index_x = bx;
   int b_index_y = i - 1 - bx;

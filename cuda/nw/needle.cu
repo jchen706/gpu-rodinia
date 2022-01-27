@@ -69,6 +69,7 @@ int
 main( int argc, char** argv) 
 {
 
+	cudaSetDevice(0);
   printf("WG size of kernel = %d \n", BLOCK_SIZE);
 
     runTest( argc, argv);
