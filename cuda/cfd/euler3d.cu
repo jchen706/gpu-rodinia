@@ -1,7 +1,3 @@
-// Copyright 2009, Andrew Corrigan, acorriga@gmu.edu
-// This code is from the AIAA-2009-4001 paper
-
-//#include <cutil.h>
 #include <helper_cuda.h>
 #include <helper_timer.h>
 #include <iostream>
@@ -180,6 +176,7 @@ void initialize_variables(int nelr, float* variables)
 {
 	dim3 Dg(nelr / BLOCK_SIZE_1), Db(BLOCK_SIZE_1);
 	cuda_initialize_variables<<<Dg, Db>>>(nelr, variables);
+  cudaThreadSynchronize();
 	getLastCudaError("initialize_variables failed");
 }
 
@@ -250,7 +247,8 @@ void compute_step_factor(int nelr, float* variables, float* areas, float* step_f
 {
 	dim3 Dg(nelr / BLOCK_SIZE_2), Db(BLOCK_SIZE_2);
 	cuda_compute_step_factor<<<Dg, Db>>>(nelr, variables, areas, step_factors);		
-	getLastCudaError("compute_step_factor failed");
+	cudaThreadSynchronize();
+  getLastCudaError("compute_step_factor failed");
 }
 
 /*
@@ -391,7 +389,8 @@ void compute_flux(int nelr, int* elements_surrounding_elements, float* normals, 
 {
 	dim3 Dg(nelr / BLOCK_SIZE_3), Db(BLOCK_SIZE_3);
 	cuda_compute_flux<<<Dg,Db>>>(nelr, elements_surrounding_elements, normals, variables, fluxes);
-	getLastCudaError("compute_flux failed");
+	cudaThreadSynchronize();
+  getLastCudaError("compute_flux failed");
 }
 
 __global__ void cuda_time_step(int j, int nelr, float* old_variables, float* variables, float* step_factors, float* fluxes)
@@ -410,7 +409,8 @@ void time_step(int j, int nelr, float* old_variables, float* variables, float* s
 {
 	dim3 Dg(nelr / BLOCK_SIZE_4), Db(BLOCK_SIZE_4);
 	cuda_time_step<<<Dg,Db>>>(j, nelr, old_variables, variables, step_factors, fluxes);
-	getLastCudaError("update failed");
+	cudaThreadSynchronize();
+  getLastCudaError("update failed");
 }
 
 /*
@@ -431,10 +431,6 @@ int main(int argc, char** argv)
 	int dev;
 	
 	checkCudaErrors(cudaSetDevice(0));
-	checkCudaErrors(cudaGetDevice(&dev));
-	checkCudaErrors(cudaGetDeviceProperties(&prop, dev));
-	
-	printf("Name:                     %s\n", prop.name);
 
 	// set far field conditions and load them into constant memory on the gpu
 	{

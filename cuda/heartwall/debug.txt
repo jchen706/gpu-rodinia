@@ -1,0 +1,832 @@
+Script started on 2022-03-29 11:40:06-0400
+(base) jchen706@boson:/data/jchen/rodi/rodinia/cuda/heartwall$ make install[K[K[K[K[Ksh run.sh 
+inline: _ZN25__cuda_builtin_blockIdx_t17__fetch_builtin_xEv
+inline: _ZN26__cuda_builtin_threadIdx_t17__fetch_builtin_xEv
+do not need to handle tri-income if: if.end278
+do not need to handle tri-income if: if.end278
+do not need to handle tri-income if: if.end278
+do not need to handle tri-income if: if.end580
+do not need to handle tri-income if: if.end580
+do not need to handle tri-income if: if.end580
+do not need to handle tri-income if: if.end1365
+split
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %132 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 5
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx79 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom78
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx82 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom81
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %150 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 0
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx88 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom87
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx91 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom90
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %160 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 38
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+Instruction does not dominate all uses!
+  %135 = getelementptr inbounds %struct.params_common_change, %struct.params_common_change* %74, i32 0, i32 0
+  %175 = load float*, float** %135, align 8
+Instruction does not dominate all uses!
+  %132 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 5
+  %177 = load i32, i32* %132, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx122 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom121
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx128 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom127
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx131 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom130
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %190 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %192 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %194 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %196 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %197 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %199 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %201 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %205 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %213 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 42
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %216 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 40
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %225 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 45
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %228 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 37
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %233 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 33
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %239 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 44
+Instruction does not dominate all uses!
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+  %242 = load i32, i32* %163, align 4
+Instruction does not dominate all uses!
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+  %245 = load i32, i32* %163, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %246 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %248 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %261 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %209 = addrspacecast [2601 x float] addrspace(3)* %57 to [2601 x float]*
+  %arrayidx210 = getelementptr inbounds [2601 x float], [2601 x float]* %209, i64 0, i64 %idxprom209
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx212 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom211
+Instruction does not dominate all uses!
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+  %267 = load i32, i32* %163, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx226 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom225
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %280 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 50
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %292 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 46
+Instruction does not dominate all uses!
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+  %296 = load i32, i32* %163, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %298 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 47
+Instruction does not dominate all uses!
+  %228 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 37
+  %302 = load i32, i32* %228, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx262 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom261
+Instruction does not dominate all uses!
+  %163 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 36
+  %310 = load i32, i32* %163, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx269 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom268
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx274 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom273
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %322 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 49
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %325 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %329 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx290 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom289
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx296 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom295
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx301 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom300
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %346 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 54
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %349 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 52
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %358 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 56
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %361 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 58
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx332 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom331
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %366 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx339 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom338
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %375 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 66
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %387 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 60
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %390 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 62
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx366 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom365
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %395 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx373 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom372
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx382 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom381
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx387 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom386
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx393 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom392
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %419 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx407 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom406
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx413 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom412
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx418 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom417
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %438 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %442 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 70
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %445 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 68
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %454 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 72
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %457 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 74
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx449 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom448
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %462 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx456 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom455
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %471 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 82
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %474 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 80
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %483 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 76
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %486 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 78
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx483 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom482
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %491 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx490 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom489
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx499 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom498
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx504 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom503
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx510 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom509
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %515 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 86
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx520 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom519
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx526 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom525
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %531 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %533 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %535 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %536 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %292 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 46
+  %539 = load i32, i32* %292, align 4
+Instruction does not dominate all uses!
+  %292 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 46
+  %541 = load i32, i32* %292, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %542 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 84
+Instruction does not dominate all uses!
+  %298 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 47
+  %545 = load i32, i32* %298, align 8
+Instruction does not dominate all uses!
+  %298 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 47
+  %547 = load i32, i32* %298, align 8
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %548 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 85
+Instruction does not dominate all uses!
+  %292 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 46
+  %551 = load i32, i32* %292, align 4
+Instruction does not dominate all uses!
+  %298 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 47
+  %553 = load i32, i32* %298, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx563 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom562
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx570 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom569
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx576 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom575
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %571 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %575 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx592 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom591
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx598 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom597
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx603 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom602
+Instruction does not dominate all uses!
+  %349 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 52
+  %594 = load i32, i32* %349, align 4
+Instruction does not dominate all uses!
+  %349 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 52
+  %596 = load i32, i32* %349, align 4
+Instruction does not dominate all uses!
+  %349 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 52
+  %598 = load i32, i32* %349, align 4
+Instruction does not dominate all uses!
+  %349 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 52
+  %599 = load i32, i32* %349, align 4
+Instruction does not dominate all uses!
+  %358 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 56
+  %602 = load i32, i32* %358, align 4
+Instruction does not dominate all uses!
+  %361 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 58
+  %604 = load i32, i32* %361, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx634 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom633
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %608 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx641 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom640
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %619 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %621 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %623 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %624 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %387 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 60
+  %627 = load i32, i32* %387, align 4
+Instruction does not dominate all uses!
+  %390 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 62
+  %629 = load i32, i32* %390, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx669 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom668
+Instruction does not dominate all uses!
+  %283 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 48
+  %633 = load i32, i32* %283, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx676 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom675
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx686 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom685
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx691 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom690
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx697 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom696
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %657 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx711 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom710
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx717 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom716
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx722 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom721
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %676 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %445 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 68
+  %682 = load i32, i32* %445, align 4
+Instruction does not dominate all uses!
+  %445 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 68
+  %684 = load i32, i32* %445, align 4
+Instruction does not dominate all uses!
+  %445 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 68
+  %686 = load i32, i32* %445, align 4
+Instruction does not dominate all uses!
+  %445 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 68
+  %687 = load i32, i32* %445, align 4
+Instruction does not dominate all uses!
+  %454 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 72
+  %690 = load i32, i32* %454, align 4
+Instruction does not dominate all uses!
+  %457 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 74
+  %692 = load i32, i32* %457, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx753 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom752
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %696 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx760 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom759
+Instruction does not dominate all uses!
+  %474 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 80
+  %707 = load i32, i32* %474, align 4
+Instruction does not dominate all uses!
+  %474 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 80
+  %709 = load i32, i32* %474, align 4
+Instruction does not dominate all uses!
+  %474 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 80
+  %711 = load i32, i32* %474, align 4
+Instruction does not dominate all uses!
+  %474 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 80
+  %712 = load i32, i32* %474, align 4
+Instruction does not dominate all uses!
+  %483 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 76
+  %715 = load i32, i32* %483, align 4
+Instruction does not dominate all uses!
+  %486 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 78
+  %717 = load i32, i32* %486, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx788 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom787
+Instruction does not dominate all uses!
+  %378 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 64
+  %721 = load i32, i32* %378, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx795 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom794
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx804 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom803
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx809 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom808
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx815 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom814
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx825 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom824
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx830 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom829
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %756 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx842 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom841
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %765 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 94
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx855 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom854
+Instruction does not dominate all uses!
+  %233 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 33
+  %778 = load i32, i32* %233, align 8
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %780 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %784 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %794 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 92
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %797 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 93
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx885 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom884
+Instruction does not dominate all uses!
+  %233 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 33
+  %814 = load i32, i32* %233, align 8
+Instruction does not dominate all uses!
+  %790 = addrspacecast [51 x float] addrspace(3)* %68 to [51 x float]*
+  %arrayidx905 = getelementptr inbounds [51 x float], [51 x float]* %790, i64 0, i64 %idxprom904
+Instruction does not dominate all uses!
+  %797 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 93
+  %822 = load i32, i32* %797, align 8
+Instruction does not dominate all uses!
+  %809 = addrspacecast [51 x float] addrspace(3)* %66 to [51 x float]*
+  %arrayidx917 = getelementptr inbounds [51 x float], [51 x float]* %809, i64 0, i64 %idxprom916
+Instruction does not dominate all uses!
+  %812 = addrspacecast float addrspace(3)* %65 to float*
+  %828 = load float, float* %812, align 4
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %829 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %820 = addrspacecast float addrspace(3)* %64 to float*
+  %832 = load float, float* %820, align 4
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %833 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %836 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx942 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom941
+Instruction does not dominate all uses!
+  %838 = addrspacecast float addrspace(3)* %63 to float*
+  %846 = load float, float* %838, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx948 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom947
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx958 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom957
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx963 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom962
+Instruction does not dominate all uses!
+  %812 = addrspacecast float addrspace(3)* %65 to float*
+  %862 = load float, float* %812, align 4
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %863 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx972 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom971
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx982 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom981
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx987 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom986
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx993 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom992
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %884 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 1
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1004 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1003
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1007 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1006
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1013 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1012
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1016 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1015
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1023 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1022
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1026 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1025
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1032 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1031
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1035 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1034
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1044 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1043
+Instruction does not dominate all uses!
+  %87 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 4
+  %912 = load i32, i32* %87, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1049 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1048
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1055 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1054
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1058 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1057
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1065 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1064
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1071 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1070
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1074 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1073
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %935 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 98
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %938 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 96
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1089 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1088
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1094 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1093
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %952 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 106
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %964 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 109
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %967 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 101
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %972 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 97
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %978 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 108
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %981 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 100
+Instruction does not dominate all uses!
+  %938 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 96
+  %986 = load i32, i32* %938, align 4
+Instruction does not dominate all uses!
+  %938 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 96
+  %988 = load i32, i32* %938, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1146 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1145
+Instruction does not dominate all uses!
+  %938 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 96
+  %1003 = load i32, i32* %938, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1163 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1162
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1169 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1168
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1020 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %1022 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 105
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1025 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1183 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1182
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1045 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %1041 = addrspacecast [131 x float] addrspace(3)* %61 to [131 x float]*
+  %arrayidx1206 = getelementptr inbounds [131 x float], [131 x float]* %1041, i64 0, i64 %idxprom1205
+Instruction does not dominate all uses!
+  %1041 = addrspacecast [131 x float] addrspace(3)* %61 to [131 x float]*
+  %arrayidx1210 = getelementptr inbounds [131 x float], [131 x float]* %1041, i64 0, i64 %idxprom1209
+Instruction does not dominate all uses!
+  %1038 = addrspacecast [131 x i32] addrspace(3)* %59 to [131 x i32]*
+  %arrayidx1212 = getelementptr inbounds [131 x i32], [131 x i32]* %1038, i64 0, i64 %idxprom1211
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1055 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1057 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1059 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %955 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 104
+  %1060 = load i32, i32* %955, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %1065 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %233 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 33
+  %1069 = load i32, i32* %233, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1238 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1237
+Instruction does not dominate all uses!
+  %87 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 4
+  %1075 = load i32, i32* %87, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1243 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1242
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1246 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1245
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1252 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1251
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1257 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1256
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1260 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1259
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1266 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1265
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1278 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1277
+Instruction does not dominate all uses!
+  %87 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 4
+  %1098 = load i32, i32* %87, align 8
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1283 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1282
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1288 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1287
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1291 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1290
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1296 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1295
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1301 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1300
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1304 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1303
+Instruction does not dominate all uses!
+  %108 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 34
+  %1118 = load i32, i32* %108, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %1120 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %1122 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %1124 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %111 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 32
+  %1125 = load i32, i32* %111, align 4
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1326 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1325
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1329 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1328
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1337 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1336
+Instruction does not dominate all uses!
+  %78 = addrspacecast [51 x %struct.params_unique] addrspace(4)* %0 to [51 x %struct.params_unique]*
+  %arrayidx1340 = getelementptr inbounds [51 x %struct.params_unique], [51 x %struct.params_unique]* %78, i64 0, i64 %idxprom1339
+Instruction does not dominate all uses!
+  %132 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 5
+  %1140 = load i32, i32* %132, align 4
+Instruction does not dominate all uses!
+  %86 = addrspacecast %struct.params_common addrspace(4)* %1 to %struct.params_common*
+  %1142 = getelementptr inbounds %struct.params_common, %struct.params_common* %86, i32 0, i32 3
+Instruction does not dominate all uses!
+  %135 = getelementptr inbounds %struct.params_common_change, %struct.params_common_change* %74, i32 0, i32 0
+  %1148 = load float*, float** %135, align 8
+Instruction does not dominate all uses!
+  %71 = addrspacecast i8 addrspace(1)* %70 to i8*
+  %call = call i32 @__nvvm_reflect(i8* %71)
+LLVM ERROR: 
+(base) jchen706@boson:/data/jchen/rodi/rodinia/cuda/heartwall$ q[Kexit
+
+Script done on 2022-03-29 11:40:26-0400

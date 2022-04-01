@@ -10,6 +10,7 @@ __global__ void kernel(){
 	//	COMMON VARIABLES
 	//======================================================================================================================================================
 
+
 	fp* d_in;
 	int rot_row;
 	int rot_col;
@@ -110,7 +111,14 @@ __global__ void kernel(){
 
 		// work
 		ei_new = tx;
+		// printf(" ei_new %d, d_in2 %d \n", ei_new, d_common.in_elem);
+
 		while(ei_new < d_common.in_elem){
+
+				// printf("ei_new$$$000 %d \n", ei_new);
+
+
+			
 
 			// figure out row/col location in new matrix
 			row = (ei_new+1) % d_common.in_rows - 1;												// (0-n) row
@@ -151,9 +159,19 @@ __global__ void kernel(){
 		in2_rowlow = d_unique[bx].d_Row[d_unique[bx].point_no] - d_common.sSize;													// (1 to n+1)
 		in2_collow = d_unique[bx].d_Col[d_unique[bx].point_no] - d_common.sSize;
 
+
+
 		// work
 		ei_new = tx;
+
+	  // printf(" in2_rowlow  %d,  in2_collow %d, ei_new %d, d_in2 %d \n", in2_rowlow ,  in2_collow, ei_new, d_common.in2_elem);
+
+		// good 
+
 		while(ei_new < d_common.in2_elem){
+			// printf("ei_new### %d \n", ei_new);
+
+
 
 			// figure out row/col location in new matrix
 			row = (ei_new+1) % d_common.in2_rows - 1;												// (0-n) row
@@ -168,6 +186,8 @@ __global__ void kernel(){
 			ori_col = col + in2_collow - 1;
 			d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
 
+			// printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",bx, ei_new, d_unique[bx].d_in2[ei_new]);
+
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -178,6 +198,22 @@ __global__ void kernel(){
 		//======================================================================================================================================================
 
 		__syncthreads();
+
+
+		// check 1
+
+		// if(bx == 0 && tx == 0) {
+
+		// 	// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+		// 	int nextline = 0;
+		// 	for(int blockz = 0; blockz < 51; blockz++) {
+		// 		for(int threadz = 0; threadz < 6551 ; threadz++) {
+		// 			// printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",blockz, threadz, d_unique[blockz].d_in2[threadz]);
+		// 		}	
+		// 	}
+		// }
+		__syncthreads();
+
 
 		//======================================================================================================================================================
 		//	CONVOLUTION
@@ -217,6 +253,26 @@ __global__ void kernel(){
 		//====================================================================================================
 
 		__syncthreads();
+
+		// check 2
+		// if(bx == 0 && tx == 0) {
+
+		// 	// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+		// 	int nextline = 0;
+		// 	for(int inde = 0; inde < 2601; inde++) {
+		// 		// for(int threadz = 0; threadz < 6551 ; threadz++) {
+		// 			float te = d_in_mod_temp[inde];
+		// 			printf(" inde: %d	d_in_mod_temp[inde]  %f \n", inde,te);
+		// 			// printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",blockz, threadz, d_unique[blockz].d_in2[threadz]);
+		// 		// }	
+		// 	}
+		// }
+
+		// __syncthreads();
+
+
+
+
 
 		//====================================================================================================
 		//	ACTUAL CONVOLUTION
@@ -290,6 +346,23 @@ __global__ void kernel(){
 
 		__syncthreads();
 
+
+
+		// check 3
+
+		// if(bx == 0 && tx == 0) {
+
+		// 	// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+		// 	int nextline = 0;
+		// 	for(int blockz = 0; blockz < 51; blockz++) {
+		// 		for(int threadz = 0; threadz < 6551 ; threadz++) {
+		// 			printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",blockz, threadz, d_unique[blockz].d_conv[threadz]);
+		// 		}	
+		// 	}
+		// }
+
+		// __syncthreads();
+
 		//======================================================================================================================================================
 		//	CUMULATIVE SUM
 		//======================================================================================================================================================
@@ -327,6 +400,19 @@ __global__ void kernel(){
 				d_unique[bx].d_in2_pad_cumv[ei_new] = 0;
 			}
 
+			// 		if(ei_new == 10386  && bx == 21){
+			// 		float fx =  	d_unique[bx].d_in2_pad_cumv[ei_new];
+			// 	  // float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx);
+			// 		// int sa = d_common.in2_sub_cumh_rows;
+			// 		// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			// }
+
+
+
+
+
+
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -337,6 +423,27 @@ __global__ void kernel(){
 		//==================================================
 
 		__syncthreads();
+
+		// check 4
+
+		// if(bx == 0 && tx == 0) {
+
+		// 	// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+		// 	int nextline = 0;
+		// 	for(int blockz = 0; blockz < 51; blockz++) {
+		// 		for(int threadz = 0; threadz < 6551 ; threadz++) {
+		// 			printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",blockz, threadz, d_unique[blockz].d_in2_pad_cumv[threadz]);
+		// 		}	
+		// 	}
+		// }
+
+
+
+
+
+
+		__syncthreads();
+
 
 		//==================================================
 		//	VERTICAL CUMULATIVE SUM
@@ -358,6 +465,7 @@ __global__ void kernel(){
 				sum = d_unique[bx].d_in2_pad_cumv[position];
 			}
 
+
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -366,6 +474,16 @@ __global__ void kernel(){
 		//====================================================================================================
 		//	SYNCHRONIZE THREADS
 		//====================================================================================================
+
+
+		// printstate
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
+			// 	  // float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx);
+			// 		// int sa = d_common.in2_sub_cumh_rows;
+			// 		// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			// }
 
 		__syncthreads();
 
@@ -390,6 +508,7 @@ __global__ void kernel(){
 			ori_col = col + d_common.in2_pad_cumv_sel_collow - 1;
 			d_unique[bx].d_in2_pad_cumv_sel[ei_new] = d_unique[bx].d_in2_pad_cumv[ori_col*d_common.in2_pad_cumv_rows+ori_row];
 
+		
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -426,6 +545,8 @@ __global__ void kernel(){
 			ori_col = col + d_common.in2_pad_cumv_sel2_collow - 1;
 			d_unique[bx].d_in2_sub_cumh[ei_new] = d_unique[bx].d_in2_pad_cumv[ori_col*d_common.in2_pad_cumv_rows+ori_row];
 
+				
+	
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -448,6 +569,8 @@ __global__ void kernel(){
 			// subtract
 			d_unique[bx].d_in2_sub_cumh[ei_new] = d_unique[bx].d_in2_pad_cumv_sel[ei_new] - d_unique[bx].d_in2_sub_cumh[ei_new];
 
+		
+			
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -511,6 +634,8 @@ __global__ void kernel(){
 			ori_col = col + d_common.in2_sub_cumh_sel_collow - 1;
 			d_unique[bx].d_in2_sub_cumh_sel[ei_new] = d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
 
+
+
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -532,6 +657,7 @@ __global__ void kernel(){
 
 		// work
 		ei_new = tx;
+		// 17161
 		while(ei_new < d_common.in2_sub2_elem){
 
 			// figure out row/col location in new matrix
@@ -547,6 +673,7 @@ __global__ void kernel(){
 			ori_col = col + d_common.in2_sub_cumh_sel2_collow - 1;
 			d_unique[bx].d_in2_sub2[ei_new] = d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
 
+		
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -569,6 +696,7 @@ __global__ void kernel(){
 			// subtract
 			d_unique[bx].d_in2_sub2[ei_new] = d_unique[bx].d_in2_sub_cumh_sel[ei_new] - d_unique[bx].d_in2_sub2[ei_new];
 
+		
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -594,6 +722,8 @@ __global__ void kernel(){
 
 			temp = d_unique[bx].d_in2[ei_new];
 			d_unique[bx].d_in2_sqr[ei_new] = temp * temp;
+
+			
 
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
@@ -701,6 +831,7 @@ __global__ void kernel(){
 			ori_row = row + d_common.in2_pad_cumv_sel_rowlow - 1;
 			ori_col = col + d_common.in2_pad_cumv_sel_collow - 1;
 			d_unique[bx].d_in2_pad_cumv_sel[ei_new] = d_unique[bx].d_in2_pad_cumv[ori_col*d_common.in2_pad_cumv_rows+ori_row];
+		
 
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
@@ -737,7 +868,15 @@ __global__ void kernel(){
 			ori_row = row + d_common.in2_pad_cumv_sel2_rowlow - 1;
 			ori_col = col + d_common.in2_pad_cumv_sel2_collow - 1;
 			d_unique[bx].d_in2_sub_cumh[ei_new] = d_unique[bx].d_in2_pad_cumv[ori_col*d_common.in2_pad_cumv_rows+ori_row];
-
+			if(ei_new == 10386  && bx == 21){
+					float fx1 = 	d_unique[bx].d_in2_sub_cumh[ei_new];
+				  // float tt1 = d_unique[bx].d_in2_pad_cumv_sel[ei_new];
+					// float ft1 = d_unique[bx].d_in2_sub_cumh[ei_new];
+				  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx1);
+					// int sa = d_common.in2_sub_cumh_rows;
+					// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			}
+		
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -757,9 +896,32 @@ __global__ void kernel(){
 		ei_new = tx;
 		while(ei_new < d_common.in2_sub_cumh_elem){
 
+
+      /// negative value
 			// subtract
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx = 	d_unique[bx].d_in2_sub_cumh[ei_new];
+			// 	  float tt = d_unique[bx].d_in2_pad_cumv_sel[ei_new];
+			// 		float ft = d_unique[bx].d_in2_sub_cumh[ei_new];
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  %f %f \n", fx, tt, ft);
+			// 		// int sa = d_common.in2_sub_cumh_rows;
+			// 		// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			// }
 			d_unique[bx].d_in2_sub_cumh[ei_new] = d_unique[bx].d_in2_pad_cumv_sel[ei_new] - d_unique[bx].d_in2_sub_cumh[ei_new];
 
+			// d_unique[bx].d_in2_sqr_sub2[ei_new] 
+			// 0  317917  0
+			// 317917.000000  317917.000000 317917.000000
+			// 895295.000000 
+			// -577378.000000  317917.000000 -577378.000000 
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx1 = 	d_unique[bx].d_in2_sub_cumh[ei_new];
+			// 	  float tt1 = d_unique[bx].d_in2_pad_cumv_sel[ei_new];
+			// 		float ft1 = d_unique[bx].d_in2_sub_cumh[ei_new];
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  %f %f \n", fx1, tt1, ft1);
+			// 		// int sa = d_common.in2_sub_cumh_rows;
+			// 		// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			// }
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -817,6 +979,8 @@ __global__ void kernel(){
 			ori_col = col + d_common.in2_sub_cumh_sel_collow - 1;
 			d_unique[bx].d_in2_sub_cumh_sel[ei_new] = d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
 
+
+      
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -851,6 +1015,16 @@ __global__ void kernel(){
 			// figure out corresponding location in old matrix and copy values to new matrix
 			ori_row = row + d_common.in2_sub_cumh_sel2_rowlow - 1;
 			ori_col = col + d_common.in2_sub_cumh_sel2_collow - 1;
+
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
+			// 	  // float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx);
+			// 		// int sa = d_common.in2_sub_cumh_rows;
+			// 		// printf(" %d , %d , %d ", ori_col, ori_row, sa);
+			// }
+			
+			// maybe this line here
 			d_unique[bx].d_in2_sqr_sub2[ei_new] = d_unique[bx].d_in2_sub_cumh[ori_col*d_common.in2_sub_cumh_rows+ori_row];
 
 			// go for second round
@@ -871,6 +1045,11 @@ __global__ void kernel(){
 		// work
 		ei_new = tx;
 		while(ei_new < d_common.in2_sub2_elem){
+			// 	if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sqr_sub2[ei_new];
+			// 	  // float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx);
+			// }
 
 			// subtract
 			d_unique[bx].d_in2_sqr_sub2[ei_new] = d_unique[bx].d_in2_sub_cumh_sel[ei_new] - d_unique[bx].d_in2_sqr_sub2[ei_new];
@@ -899,11 +1078,24 @@ __global__ void kernel(){
 		while(ei_new < d_common.in2_sub2_elem){
 
 			temp = d_unique[bx].d_in2_sub2[ei_new];
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sqr_sub2[ei_new];
+			// 	  // float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f  \n", fx);
+			// }
+			// d_in2_sqr_sub2 is negative here for cpu
+			
 			temp2 = d_unique[bx].d_in2_sqr_sub2[ei_new] - (temp * temp / d_common.in_elem);
 			if(temp2 < 0){
 				temp2 = 0;
 			}
 			d_unique[bx].d_in2_sqr_sub2[ei_new] = sqrt(temp2);
+	    // temp2 = 0;
+			// if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sqr_sub2[ei_new];
+			// 	  float tt = temp2;
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f %f \n", fx,  tt);
+			// }
 			
 
 			// go for second round
@@ -1048,6 +1240,11 @@ __global__ void kernel(){
 		while(ei_new < d_common.in2_sub2_elem){
 
 			d_unique[bx].d_in2_sqr_sub2[ei_new] = d_unique[bx].d_in2_sqr_sub2[ei_new] * denomT;
+			// 	if(ei_new == 10386  && bx == 21){
+			// 		float fx =  d_unique[bx].d_in2_sqr_sub2[ei_new];
+				
+			// 	  printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f %f \n", fx,  dt);
+			// }
 
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
@@ -1088,9 +1285,19 @@ __global__ void kernel(){
 		// work
 		ei_new = tx;
 		while(ei_new < d_common.in2_sub2_elem){
+ 
+			// printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f \n", d_unique[bx].d_in2_sqr_sub2[ei_new]);
+			// if (d_unique[bx].d_in2_sqr_sub2[ei_new] == 0) {
+			// 	printf(" bx: %d  ei_new %d \n", bx, ei_new);
+			// }
+			// if(ei_new == 10386  && bx == 21){
+			// 	printf(" d_unique[bx].d_in2_sqr_sub2[ei_new] %f \n", d_unique[bx].d_in2_sqr_sub2[ei_new]);
 
+			// }
+			// cpu has a divide by 0
 			d_unique[bx].d_in2_sqr_sub2[ei_new] = d_unique[bx].d_conv[ei_new] / d_unique[bx].d_in2_sqr_sub2[ei_new];
 
+			// printf("  d_unique[bx].d_conv[ei_new] , ", )
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -1101,6 +1308,8 @@ __global__ void kernel(){
 		//======================================================================================================================================================
 
 		__syncthreads();
+
+
 
 		//======================================================================================================================================================
 		//	TEMPLATE MASK CREATE
@@ -1202,7 +1411,13 @@ __global__ void kernel(){
 
 			// //d_unique[bx].d_mask_conv[d_common.mask_conv_rows*(jc-1)+ic-1] = s;
 			d_unique[bx].d_mask_conv[ei_new] = d_unique[bx].d_in2_sqr_sub2[ei_new] * s;
+			float xs =s ;
+			// s ===1 if not 0
+			if (xs != 0) {
 
+		  	// printf(" %.0Lf \n", d_unique[bx].d_in2_sqr_sub2[ei_new]);
+
+			}
 			// go for second round
 			ei_new = ei_new + NUMBER_THREADS;
 
@@ -1221,18 +1436,95 @@ __global__ void kernel(){
 		//====================================================================================================
 		//	INITIAL SEARCH
 		//====================================================================================================
+		__syncthreads();
 
+
+		// if(bx == 0 && tx == 0) {
+
+			// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+			int nextline = 0;
+			// for(int blockz = 0; blockz < 51; blockz++) {
+				ei_new = tx; // threadidx
+				// d_common.mask_conv_rows = 131 
+				while(ei_new < d_common.mask_conv_rows){
+					 
+
+						for(int i=0; i<d_common.mask_conv_cols; i++){
+							 int lcc = ei_new*d_common.mask_conv_rows+i;
+							 if (d_unique[bx].d_mask_conv[lcc] != 0) {
+								 if (d_unique[bx].d_mask_conv[lcc] > 0.808) {
+									  // int fa = (int)(d_unique[bx].d_mask_conv[lcc]  << 4);
+									 	// printf("bx %d, ei_new %d , lcc %d  v  %lf , %d\n  " , bx, ei_new, lcc,d_unique[bx].d_mask_conv[lcc], fa);
+								 }
+
+							 }
+						}
+						ei_new = ei_new + NUMBER_THREADS;
+						// printf("%d, NUMBER_THREADS \n", NUMBER_THREADS);
+
+				}
+
+
+				// for(int threadz = 0; threadz < 6551 ; threadz++) {
+				// 	// printf(" bx: %d  ei_new### %d   d_unique[bx].d_in2[ei_new] %f \n",blockz, threadz, d_unique[blockz].d_in2[threadz]);
+				// }	
+			// }
+		// }
+
+
+		__syncthreads();
+
+
+
+		// largest _coordinate check 
 		ei_new = tx;
 		while(ei_new < d_common.mask_conv_rows){
 
+			
 			for(i=0; i<d_common.mask_conv_cols; i++){
 				largest_coordinate_current = ei_new*d_common.mask_conv_rows+i;
-				largest_value_current = abs(d_unique[bx].d_mask_conv[largest_coordinate_current]);
+
+				if (d_unique[bx].d_mask_conv[largest_coordinate_current] < 0) {
+					largest_value_current =  d_unique[bx].d_mask_conv[largest_coordinate_current] * -1;
+				} else {
+					if( d_unique[bx].d_mask_conv[largest_coordinate_current] == 0) {
+							d_unique[bx].d_mask_conv[largest_coordinate_current] = 0;
+					} else {
+						largest_value_current =  d_unique[bx].d_mask_conv[largest_coordinate_current];
+
+					}
+
+				}
+				
+	      
+			  // printf("bx %d, ei_new %d   d_unique[bx] %f  l %f \n", bx, ei_new , d_unique[bx].d_mask_conv[largest_coordinate_current], largest_value_current);
+
+
 				if(largest_value_current > largest_value){
 					largest_coordinate = largest_coordinate_current;
 					largest_value = largest_value_current;
 				}
 			}
+			/*
+				bx, 25 tx 60, largest_value, 0.893821 , 7926 
+				bx, 25 tx 61, largest_value, 0.915945 , 8057 
+				bx, 25 tx 62, largest_value, 0.941748 , 8187 
+				bx, 25 tx 63, largest_value, 0.969220 , 8318 
+
+				bx, 24 tx 60, largest_value, 0.892937 , 7926 
+				bx, 24 tx 61, largest_value, 0.907867 , 8057 
+				bx, 24 tx 62, largest_value, 0.925148 , 8187 
+				bx, 24 tx 63, largest_value, 0.949295 , 8318 
+				bx, 0 tx 64, largest_value, 0.778192 , 8449 
+				bx, 0 tx 65, largest_value, 0.812116 , 8580 
+				bx, 0 tx 66, largest_value, 0.778811 , 8711 
+				bx, 0 tx 67, largest_value, 0.707729 , 8842 
+				bx, 0 tx 68, largest_value, 0.631595 , 8973 
+				bx, 0 tx 69, largest_value, 0.580690 , 9103 
+			*/
+			// printf("bx, %d tx %d, largest_value, %0.3f , %d \n ", bx, tx, largest_value, largest_coordinate);
+
+
 			par_max_coo[ei_new] = largest_coordinate;
 			par_max_val[ei_new] = largest_value;
 
@@ -1252,12 +1544,16 @@ __global__ void kernel(){
 		//====================================================================================================
 
 		if(tx == 0){
+			// fin_max_val == inf
 
-			for(i = 0; i < d_common.mask_conv_rows; i++){
+			for(int i = 0; i < d_common.mask_conv_rows; i++){
 				if(par_max_val[i] > fin_max_val){
 					fin_max_val = par_max_val[i];
 					fin_max_coo = par_max_coo[i];
 				}
+				float xval = fin_max_val;
+				// printf("bx: %d  i: %d  , %d , %f \n", bx, i, fin_max_coo, xval);
+
 			}
 
 			// convert coordinate to row/col form
@@ -1277,6 +1573,14 @@ __global__ void kernel(){
 			d_unique[bx].d_tRowLoc[pointer] = d_unique[bx].d_Row[d_unique[bx].point_no] + offset_row;
 			d_unique[bx].d_tColLoc[pointer] = d_unique[bx].d_Col[d_unique[bx].point_no] + offset_col;
 
+			int dcinrows = d_common.in_rows;
+			int dcssize =d_common.sSize;
+			int dctsize = d_common.tSize;
+
+			// largest row  and largest col and offset_row 
+			// printf(" bx: %d  pointer %d   d_unique[bx].d_tRowLoc[pointer] %d ,  %d, offset %d,  largest_row %d, d_common.in_rows %d, d_common.sSize %d, d_common.tSize %d \n",
+			// bx, pointer, d_unique[bx].d_tRowLoc[pointer], d_unique[bx].d_Row[d_unique[bx].point_no] , offset_row,
+			// largest_row, dcinrows, dcssize , dctsize);
 		}
 
 		//======================================================================================================================================================
@@ -1284,6 +1588,27 @@ __global__ void kernel(){
 		//======================================================================================================================================================
 
 		__syncthreads();
+
+
+		//check end
+
+		// if(bx == 0 && tx == 0) {
+
+		// 	// d_unique[bx].d_in2[ei_new] = d_common_change.d_frame[ori_col*d_common.frame_rows+ori_row];
+		// 	int nextline = 0;
+		// 	for(int blockz = 0; blockz < 51; blockz++) {
+		// 		// for(int threadz = 0; threadz < 6551 ; threadz++) {
+
+		// 			int poi = 1 + d_unique[blockz].point_no *d_common.no_frames;
+
+		// 			printf(" bx: %d  poi %d   d_unique[bx].d_tRowLoc[poi] %d \n",blockz, poi, d_unique[blockz].d_tRowLoc[poi] );
+		// 		// }	
+		// 	}
+		// }
+
+		__syncthreads();
+
+
 
 	}
 	

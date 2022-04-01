@@ -1,0 +1,5 @@
+ConstMemory2GlobalMemory
+d_common_change to wrapper_global_d_common_change
+d_common to wrapper_global_d_common
+d_unique to wrapper_global_d_unique
+END

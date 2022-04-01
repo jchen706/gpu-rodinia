@@ -178,21 +178,21 @@ int main(int argc, char *argv[]) {
         (time_end.tv_sec * 1000000 + time_end.tv_usec) -
         (time_start.tv_sec * 1000000 + time_start.tv_usec);
 
-    if (verbose) {
-        printf("Matrix m is: \n");
-        PrintMat(m, Size, Size);
+    // if (verbose) {
+    //     printf("Matrix m is: \n");
+    //     PrintMat(m, Size, Size);
 
-        printf("Matrix a is: \n");
-        PrintMat(a, Size, Size);
+    //     printf("Matrix a is: \n");
+    //     PrintMat(a, Size, Size);
 
-        printf("Array b is: \n");
-        PrintAry(b, Size);
-    }
+    //     printf("Array b is: \n");
+    //     PrintAry(b, Size);
+    // }
     BackSub();
-    if (verbose) {
-        printf("The final solution is: \n");
-        PrintAry(finalVec, Size);
-    }
+    // if (verbose) {
+    //     printf("The final solution is: \n");
+    //     PrintAry(finalVec, Size);
+    // }
     printf("\nTime total (including memory transfers)\t%f sec\n",
            time_total * 1e-6);
     printf("Time for CUDA kernels:\t%f sec\n", totalKernelTime * 1e-6);
@@ -305,9 +305,9 @@ void InitPerRun() {
  **-------------------------------------------------------
  */
 __global__ void Fan1(float *m_cuda, float *a_cuda, int Size, int t) {
-    if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) {
-        printf("blockIDx.x: %d, threadIdx.x: %d, Size: %d, t: %d, Size-1-t: %d\n",blockIdx.x,threadIdx.x,Size,t,Size-1-t);
-    }
+    // if(threadIdx.x + blockIdx.x * blockDim.x >= Size-1-t) {
+    //     printf("blockIDx.x: %d, threadIdx.x: %d, Size: %d, t: %d, Size-1-t: %d\n",blockIdx.x,threadIdx.x,Size,t,Size-1-t);
+    // }
 
     if (threadIdx.x + blockIdx.x * blockDim.x >= Size - 1 - t)
         return;

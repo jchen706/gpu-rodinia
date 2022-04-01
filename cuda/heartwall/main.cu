@@ -96,6 +96,8 @@ void write_data(	char* filename,
 	    for(i=0; i<epiPoints; i++){
 	      //if(input_2a[j*size_2+i] > 2000) input_2a[j*size_2+i]=0;
 	      fprintf(fid, "%d\t", input_2a[j+i*frameNo]);
+
+				// printf(" \n fid: %d  , epiPoints 2a: %d \n", j+i*frameNo, input_2a[j+i*frameNo]);
 	    }
 	    fprintf(fid, "\n");
 	    for(i=0; i<epiPoints; i++){
@@ -158,6 +160,8 @@ int main(int argc, char *argv []){
 
 	// common
 	common.no_frames = AVI_video_frames(frames);
+
+	printf(" common no frames,  %d \n", common.no_frames);
 	common.frame_rows = AVI_video_height(frames);
 	common.frame_cols = AVI_video_width(frames);
 	common.frame_elem = common.frame_rows * common.frame_cols;
@@ -183,8 +187,7 @@ int main(int argc, char *argv []){
 
 	//====================================================================================================
 	//	CONSTANTS
-	//====================================================================================================
-
+	//==================================================================================================
 	common.sSize = 40;
 	common.tSize = 25;
 	common.maxMove = 10;
@@ -348,6 +351,7 @@ int main(int argc, char *argv []){
 	common.in_rows = common.tSize + 1 + common.tSize;
 	common.in_cols = common.in_rows;
 	common.in_elem = common.in_rows * common.in_cols;
+	printf(" in elem %d \n ",	common.in_elem );
 	common.in_mem = sizeof(fp) * common.in_elem;
 
 	//======================================================================================================================================================
@@ -396,6 +400,7 @@ int main(int argc, char *argv []){
 	common.in2_rows = 2 * common.sSize + 1;
 	common.in2_cols = 2 * common.sSize + 1;
 	common.in2_elem = common.in2_rows * common.in2_cols;
+	
 	common.in2_mem = sizeof(float) * common.in2_elem;
 
 	// pointers
@@ -511,6 +516,7 @@ int main(int argc, char *argv []){
 	common.in2_sub2_rows = common.in2_sub_cumh_sel2_rowhig - common.in2_sub_cumh_sel2_rowlow + 1;
 	common.in2_sub2_cols = common.in2_sub_cumh_sel2_colhig - common.in2_sub_cumh_sel2_collow + 1;
 	common.in2_sub2_elem = common.in2_sub2_rows * common.in2_sub2_cols;
+	printf("in2_sub2_elem %d \n",common.in2_sub2_elem  );
 	common.in2_sub2_mem = sizeof(float) * common.in2_sub2_elem;
 
 	// pointers
@@ -573,6 +579,7 @@ int main(int argc, char *argv []){
 
 	// common
 	common.tMask_rows = common.in_rows + (common.sSize+1+common.sSize) - 1;
+	printf(" mask_cov_rows: %d \n",	common.tMask_rows );
 	common.tMask_cols = common.tMask_rows;
 	common.tMask_elem = common.tMask_rows * common.tMask_cols;
 	common.tMask_mem = sizeof(float) * common.tMask_elem;
@@ -634,6 +641,10 @@ int main(int argc, char *argv []){
 	//====================================================================================================
 
 	cudaMemcpyToSymbol(d_common, &common, sizeof(params_common));
+	printf("blocks  %d \n", blocks.x);
+
+
+
 	cudaMemcpyToSymbol(d_unique, &unique, sizeof(params_unique)*ALL_POINTS);
 
 	//====================================================================================================
@@ -663,12 +674,20 @@ int main(int argc, char *argv []){
 		// launch GPU kernel
 		kernel<<<blocks, threads>>>();
 
+		cudaDeviceSynchronize();
+
 		// free frame after each loop iteration, since AVI library allocates memory for every frame fetched
 		free(frame);
 
 		// print frame progress
-		printf("%d ", common_change.frame_no);
+		// printf("%d ", common_change.frame_no);
 		fflush(NULL);
+
+		// if(common_change.frame_no == 1) {
+		// 	// debug purpose;
+		// 	printf("exit on 1");
+		// 	break;
+		// }
 
 	}
 
@@ -691,11 +710,6 @@ int main(int argc, char *argv []){
 
 
 
-#ifdef OUTPUT
-
-	//==================================================50
-	//	DUMP DATA TO FILE
-	//==================================================50
 	write_data(	"result.txt",
 			common.no_frames,
 			frames_processed,		
@@ -706,11 +720,26 @@ int main(int argc, char *argv []){
 				common.tEpiRowLoc,
 				common.tEpiColLoc);
 
-	//==================================================50
-	//	End
-	//==================================================50
+// #ifdef OUTPUT
 
-#endif
+// 	//==================================================50
+// 	//	DUMP DATA TO FILE
+// 	//==================================================50
+// 	write_data(	"result.txt",
+// 			common.no_frames,
+// 			frames_processed,		
+// 				common.endoPoints,
+// 				common.tEndoRowLoc,
+// 				common.tEndoColLoc,
+// 				common.epiPoints,
+// 				common.tEpiRowLoc,
+// 				common.tEpiColLoc);
+
+// 	//==================================================50
+// 	//	End
+// 	//==================================================50
+
+// #endif
 
 
 
